@@ -1,4 +1,12 @@
 
+/* The idea is the first 13 element of capital alphabet is alligned to the last 13 element of alphabet.
+Then the alphabet is encoded such as this example A=N, B=O, C=P, etc. the term this idea is also called as ROT13.
+*/
+
+/**
+ * @param {string} str
+ * @return {string}
+ */
 
 console.log((function rot13(str) {
   let alphbt = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
