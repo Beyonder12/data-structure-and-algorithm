@@ -9,7 +9,7 @@ console.log((function rot13(str) {
       result.push(alphbt[m_alphbt.indexOf(str[i])]); //
     }
     else {
-      result.push(str[i])
+      result.push(str[i]) // if the str is not capital alphabet, it will return as initial
     }
   }
   return result.join('');
