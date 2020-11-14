@@ -1,0 +1,27 @@
+{
+  "name": "Product",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "namaProduk": {
+      "type": "string",
+      "required": true
+    },
+    "keterangan": {
+      "type": "string"
+    },
+    "harga": {
+      "type": "number"
+    },
+    "jumlah": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
