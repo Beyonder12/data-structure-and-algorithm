@@ -3,11 +3,11 @@ function countingValleys(step, path) {
   let currLevel = 0;
   let valleys = 0;
 
-  path = path.split('');
+
   for (let i=0; i< path.length; i++) {
     if(path[i] === 'U') {
-      currentLevel ++;
-      if (currentLevel ==0 ){
+      currLevel ++;
+      if (currLevel ==0 ){
         valleys++
       }
     } else {
@@ -15,7 +15,8 @@ function countingValleys(step, path) {
     }
   }
 
-  return valleys;
+  console.log( valleys);
 }
 
-console.log(countingValleys(8,['UDDDUDUU']))
+countingValleys(8,'UDDDUDUU')
+// console.log('kk');
