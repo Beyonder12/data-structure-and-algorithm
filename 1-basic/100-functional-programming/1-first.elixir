@@ -1,0 +1,14 @@
+defmodule Solution do
+
+defmodule Solution do
+#Enter your code here. Read input from STDIN. Print output to STDOUT
+asdf = IO.read(:line) |> Integer.parse
+asdf2 = IO.read(:line) |> Integer.parse
+first = asdf |> elem(0)
+second = asdf2 |> elem(0)
+sum = first + second
+IO.puts(sum)
+
+end
+
+end
