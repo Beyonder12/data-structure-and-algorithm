@@ -1,3 +1,6 @@
+// n x log(n)
+
+
 function quickSort(arr) {
     let pivot = arr[0];
     let left = [];
