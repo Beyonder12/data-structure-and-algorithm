@@ -1,3 +1,5 @@
+// running time O(n^2) or its called as time complexity
+
 function runningTime(arr) {
     let count = 0;
     for (let i = 1; i < arr.length; i++) {
