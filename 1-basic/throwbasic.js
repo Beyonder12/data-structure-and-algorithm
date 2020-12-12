@@ -7,3 +7,5 @@ if(a > 0){
         throw (a === 0 ? new Error('Zero Error') : new Error('Negative Error'));
     }
 }
+
+console.log(new Date('helo'))
