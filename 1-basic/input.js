@@ -54,4 +54,17 @@
 // console.log(y)
 // console.log(m)
 
-console.log([].reduce((a,b) => a+b))
+// console.log([].reduce((a,b) => a+b))
+
+var startOfMonth = moment().month("June").startOf("month").toDate()
+var endOfMonth   = moment().month("June").endOf("month").toDate()
+
+console.log(startOfMonth)
+
+var start = new Date();
+start.setHours(0,0,0,0);
+
+var end = new Date();
+end.setHours(23,59,59,999);
+
+console.log(start, end)   
