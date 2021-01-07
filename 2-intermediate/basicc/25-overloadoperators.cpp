@@ -1,5 +1,11 @@
 #include<iostream>
-
+/*
+input
+3+i4
+5+i6
+output
+8+i10
+*/
 using namespace std;
 
 class Complex
