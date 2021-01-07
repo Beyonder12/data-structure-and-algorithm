@@ -1,0 +1,45 @@
+/*
+invalid_argument
+class invalid_argument
+invalid argument -> logic_error -> exception
+this class defines the type of objects thrown as exceptions to report
+an invalid argument.
+*/
+
+#include <iostream>
+#include <stdexcept>
+
+using namespace std;
+
+int largest_proper_divisor(int n) {
+    if (n == 0) {
+        throw invalid_argument("largest proper divisor is not defined fo n ==0");
+    }
+    if (n == 1) {
+        throw invalid_argument("largest proper divisior is not defined for n=1");
+    }
+    for (int i = n/2; i >= 1; --i) {
+        if (n%i == 0) {
+            return i;
+        }
+    }
+    return -1; // will never happen
+}
+
+void process_input(int n) {
+    try {
+        int d = largest_proper_divisor(n);
+        cout << "result" << d << endl;
+    }
+    catch(invalid_argument e){
+        cout << e.what() << endl;
+    }
+    cout << "returning control flow to calleer" << endl;
+}
+
+int main() {
+    int n;
+    cin >> n;
+    process_input(n);
+    return 0;
+}
