@@ -1,5 +1,19 @@
 import java.util.Scanner;
 
+/*
+input
+3
+1 1 2 3
+2 1 2 3
+3 3 1 1
+
+output
+YES
+YES
+NO
+
+
+*/
 public class Solution {
     
     public static void main(String[] args) {
