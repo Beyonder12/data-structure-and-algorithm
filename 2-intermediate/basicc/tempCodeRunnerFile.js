@@ -1,1 +1,1 @@
-a.push(c)
+console.log(obj)
