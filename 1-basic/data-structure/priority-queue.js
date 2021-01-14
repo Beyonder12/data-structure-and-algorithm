@@ -32,7 +32,7 @@ class PriorityQueue {
         //creating object from queue element
         var qElement = new QElement(element, priority);
         var contain = false;
-
+   
         // iterating through the entire item array to add element at the correct location of the Queue
         for (var i = 0; i < this.items.length; i++) {
             if (this.items[i].priority > qElement.priority) {
@@ -98,10 +98,14 @@ console.log(priorityQueue.isEmpty());
 console.log(priorityQueue.front()); 
   
 // adding elements to the queue 
-priorityQueue.enqueue("b1", 2); 
+priorityQueue.enqueue(["b2"],2); 
+console.log(priorityQueue.printPQueue()); 
 priorityQueue.enqueue("a1", 1); 
+console.log(priorityQueue.printPQueue()); 
 priorityQueue.enqueue("a2", 1); 
-priorityQueue.enqueue("b2", 2); 
+console.log(priorityQueue.printPQueue()); 
+priorityQueue.enqueue("b1", 2); 
+console.log(priorityQueue.printPQueue()); 
 priorityQueue.enqueue("c1", 3); 
   
 // prints [Gourav Piyush Sumit Sunny Sheru] 
