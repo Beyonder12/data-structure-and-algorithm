@@ -25,4 +25,4 @@ class Stack {
 var stack = new Stack();
 stack.push(4);
 stack.push(5);
-stack.print();
+stack.print() 
