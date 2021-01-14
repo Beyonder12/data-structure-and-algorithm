@@ -1,14 +1,14 @@
-class Queue {
+  class Queue {
     constructor() {
       this.collection = {};
-      this.start = 0;
+      this.start = ;
       this.end = 0;
     }
     print() {
       console.log(this.collection);
     }
     enqueue(val) {
-      this.collection[this.end++] = val;
+      return this.collection[this.end++] = val;
     }
     dequeue() {
       return this.collection[this.start++];
@@ -24,7 +24,8 @@ class Queue {
     }
   }
 
-var stack = new Queue();
-stack.enqueue(4);
-stack.dequeue(5);
-stack.print() 
+var q = new Queue();
+q.enqueue('a');
+q.enqueue('b');
+q.dequeue();
+q.print() 
