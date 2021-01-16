@@ -1,22 +1,9 @@
-var reverseString = function (s) {
-    let i = 0,
-      j = s.length - 1;
-    while (i < j) {
-      const temp = s[j];
-      s[j] = s[i];
-      s[i] = temp;
-      i++;
-      j--;
-    }
-    return s;
-  };
-
-  console.log(reverseString([1,2,3,4,5]));
-
-  let i = 0;
-  while(i < 5) {
-      const  a = i;
-      const a = i+1;
-      console.log(a);
-      i++;
-  }
+function checkSet(){
+    var set = new Set([1,2,3,4,5]);
+    set.delete(2);
+    set.delete(5);
+    return set;
+    // return Array.from(set);
+ }
+ 
+ console.log(checkSet());
