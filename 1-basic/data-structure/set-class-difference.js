@@ -61,13 +61,7 @@ class Set {
             smallSet = this;
         }
 
-        smallSet.values().forEach(value => {
-            if (largeSet.dictionary[value]) {
-                newSet.add(value);
-            }
-        })
-
-        return newSet;
+        e
     }
 
     difference(set) {
