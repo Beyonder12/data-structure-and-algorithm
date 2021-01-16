@@ -12,3 +12,11 @@ var reverseString = function (s) {
   };
 
   console.log(reverseString([1,2,3,4,5]));
+
+  let i = 0;
+  while(i < 5) {
+      const  a = i;
+      const a = i+1;
+      console.log(a);
+      i++;
+  }
