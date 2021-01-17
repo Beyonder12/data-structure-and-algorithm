@@ -1,9 +1,7 @@
-function checkSet(){
-    var set = new Set([1,2,3,4,5]);
-    set.delete(2);
-    set.delete(5);
-    return set;
-    // return Array.from(set);
- }
- 
- console.log(checkSet());
+var countGoodRectangles = function(rectangles) {
+    return rectangles.filter(e=> e[0] < e[1]).length;
+    
+};
+
+let rectangles = [[5,8],[3,9],[5,12],[16,5]];
+console.log(countGoodRectangles(rectangles));
