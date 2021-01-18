@@ -19,9 +19,7 @@ var HashTable = function() {
 
   this.remove = function(key) {
     var hashedObj = this.collection[hash(key)];
-    if (hashedObj.hasOwnProperty(key)) {
-      delete hashedObj[key];
-    }
+    
     if (!Object.keys(hashedObj).length) {
       delete this.collection[hash(key)];
     }
@@ -42,6 +40,6 @@ console.log(h.add('b', 2));
 console.log(h.lookup('a'));
 console.log(h.add('acbb', 3));
 console.log(h.add('a', 3));
-console.log(h.lookup('c'));
 console.log(h.collection);
-console.log('a'.charCodeAt(2))
+console.log(h.remove('a', 3));
+console.log(h.collection);
