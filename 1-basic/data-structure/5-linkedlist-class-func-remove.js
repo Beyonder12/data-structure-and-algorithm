@@ -50,3 +50,6 @@ function LinkedList() {
 
     };
 }
+
+var ll = new LinkedList();
+console.log(ll)
