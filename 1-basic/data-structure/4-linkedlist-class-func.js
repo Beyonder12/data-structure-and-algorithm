@@ -26,3 +26,7 @@ function LinkedList() {
         length++;
     };
 }
+
+var ll = new LinkedList();
+
+console.log(JSON.parse(JSON.stringify(ll)));
