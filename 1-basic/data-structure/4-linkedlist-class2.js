@@ -129,6 +129,7 @@ class LinkedList {
 }
 
 const ll = new LinkedList();
+console.log(ll)
 
 ll.insertFirst(100);
 ll.insertFirst(200);
