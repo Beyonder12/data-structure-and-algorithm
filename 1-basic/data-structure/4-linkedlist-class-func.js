@@ -1,13 +1,13 @@
 function LinkedList() {
-    let length = 0;
-    let head = null;
+    this.length = 0;
+    this.head = null;
 
     function Node(element) {
         this.element = element;
         this.next = null;
     }
 
-    this.head = () => head;
+   
 
     this.size = () => length;
 
@@ -28,5 +28,5 @@ function LinkedList() {
 }
 
 var ll = new LinkedList();
-
-console.log(JSON.parse(JSON.stringify(ll)));
+    
+console.log(ll)
