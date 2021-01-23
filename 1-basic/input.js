@@ -1,87 +1,40 @@
-function LinkedList() {
-    var length = 0;
-    var head = null;
-  
-    var Node = function(element){ // {1}
-      this.element = element;
-      this.next = null;
-    };
-  
-    this.size = function() {
-      return length;
-    };
-  
-    this.head = function(){
-      return head;
-    };
-  
-    this.add = function(element){
-      var node = new Node(element);
-      if(head === null){
-        head = node;
-      } else {
-        var currentNode = head;
-  
-        while(currentNode.next){
-          currentNode  = currentNode.next;
-        }
-  
-        currentNode.next = node;
-      }
-  
-      length++;
-    };
-  
-    this.remove = function(element){
-      var currentNode = head;
-      var previousNode;
-      if(currentNode.element === element){
-        head = currentNode.next;
-      } else {
-        while(currentNode.element !== element) {
-          previousNode = currentNode;
-          currentNode = currentNode.next;
-        }
-  
-        previousNode.next = currentNode.next;
-      }
-  
-      length --;
-    };
-  
-    this.isEmpty = function() {
-      return this.size() > 0 ? false : true;
-    };
-  
-    this.indexOf = function(el) {
-      let currentNode = head, index = -1, indexFound = false;
-  
-      while (!indexFound && currentNode) {
-        index++;
-        if(currentNode.element === el) {
-          indexFound = true;
-        }
-        currentNode = currentNode.next;
-      } 
-  
-      return indexFound ? index : -1;
-    };
-  
-    this.elementAt = function(i) {
-      let currentNode = head, currentElement, index = -1, indexReached = false;
-  
-      while (!indexReached && currentNode) {
-        index++;
-        currentElement = currentNode.element;
-        if(index === i) {
-          indexReached = true;
-        }
-        currentNode = currentNode.next;
-      } 
-  
-      return indexReached ? currentElement : undefined;
+const reverse = x => {
+    const negative = x < 0 ? -1 : 1
+    let output = 0
+    x = Math.abs(x)
+    while (x > 0) {
+        const remainder = x % 10 
+        output = output * 10 + remainder
+        x = Math.floor(x / 10)
     }
-  }
-  
-  var ll = new LinkedList();
-  console.log(ll);
+    if (output > Math.pow(2,31)) return 0
+    return output * negative
+};
+console.log(123)
+console.log(reverse(123))
+
+// /*
+
+// /**
+//  * @param {number} x
+//  * @return {number}
+//  */
+// const reverse = function(x) {
+//     const isNegative = x < 0;
+//     x = Math.abs(x);
+//     let result = 0;
+    
+//     while (x) {
+//       const digit = x % 10;
+//       x = Math.floor(x / 10);
+//       result = result * 10 + digit;
+//     }
+    
+//     // restrict result to maintain settled overflow
+//     if (result > 2**31) {
+//       return 0;
+//     }
+    
+//     return isNegative ? -result : result;
+//   };
+// */
