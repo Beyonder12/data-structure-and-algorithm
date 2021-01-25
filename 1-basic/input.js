@@ -1,17 +1,22 @@
-var sqrt = function(x) {
-    var isGoodEnough = function(guess) {
-      return Math.abs(guess * guess - x) / x < 0.001;
-    };
-    
-    var improve = function(guess) {
-      return (guess + x / guess) / 2;
-    };
-    
-    var sqrIter = function(guess) {
-      return (isGoodEnough(guess)) ? guess : sqrIter(improve(guess))
-    };
-    
-    return sqrIter(1.0);
-  };
-  console.log(sqrt(2))
-  
+var twoSum = function(nums, target) {
+  const arr = [];//array for storing parse values
+  let i = 0; // counter
+  while( i < nums.length ){
+      //checking in current number exist in array or not
+      if( arr[ target - nums[i] ] != undefined )  return [  arr[ target - nums[i] ], i ];
+      arr[ nums[i] ] = i;//adding parse value to array
+      console.log(arr)
+      i++;//increamenting the counter
+      
+  }
+};
+
+let nums = [2,11,15,7], target = 9;
+
+console.log(twoSum(nums, target));
+
+a = [];
+
+a[-2] = 0;
+a[1] = 0;
+console.log(a)
