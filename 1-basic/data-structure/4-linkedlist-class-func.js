@@ -1,6 +1,6 @@
 function LinkedList() {
-    this.length = 0;
-    this.head = null;
+    length = 0;
+    head = null;
 
     function Node(element) {
         this.element = element;
@@ -8,7 +8,7 @@ function LinkedList() {
     }
 
    
-
+    this.head = () => head;
     this.size = () => length;
 
     this.add = element => {
@@ -25,8 +25,15 @@ function LinkedList() {
         }
         length++;
     };
+
+    this.print = () => {
+        this.head;
+    }
 }
 
 var ll = new LinkedList();
     
-console.log(ll)
+
+ll.add(1);
+ll.add(2);
+console.log(ll.head())
