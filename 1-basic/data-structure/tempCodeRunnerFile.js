@@ -1,38 +1,26 @@
-var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
-function Node(value) {
-  this.value = value;
-  this.left = null;
-  this.right = null;
-}
-function BinarySearchTree() {
-
-  this.root = null;
-  // change code below this line
-  this.add = function (integer) {
-
-    let curr = this.root;
-
-    if (!curr) {
-      this.root = new Node(integer);
-      return undefined;
-    };
+let moveZeroes = (nums) => {
+    let numsLength = nums.length
+    if (numsLength < 2) return ;
     
-    while (curr) {
-      if (integer < curr.value) {
-        if (!curr.left) {
-          curr.left = new Node(integer);
-          return undefined;
+    let i = 0
+    let j = 1
+    
+    while (j < numsLength) {
+        if (nums[i] === 0) {
+            while (nums[j] === 0 && j < numsLength) {
+                j++
+            }
+            if (j < numsLength) {
+                tmp = nums[i]
+                nums[i] = nums[j]
+                nums[j] = tmp
+            }
         }
-        curr = curr.left;
-      }
-      else if (integer > curr.value) {
-        if (!curr.right) {
-          curr.right = new Node(integer);
-          return undefined;
-        }
-        curr = curr.right;
-      }
-      else return null;
+        i++
+        j++
     }
-  }   
+
+    return nums;
 }
+
+console.log(moveZeroes([1,8]));
