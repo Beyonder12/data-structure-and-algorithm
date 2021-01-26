@@ -1,0 +1,1 @@
+ //    System.out.println(arr[5] != 0);
