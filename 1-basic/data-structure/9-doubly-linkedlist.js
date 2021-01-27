@@ -64,3 +64,11 @@ var DoublyLinkedList = function() {
     }
 
 }
+
+var dll = new DoublyLinkedList();
+dll.add(100);
+dll.add(200);
+dll.add(300);
+dll.add(400);
+
+console.log(dll);
