@@ -10,7 +10,7 @@ let fizzBuzz = (n) => {
     for (let i = 1; i <= n; i++) {
         let output = "";
         for (let key of hashMap.keys()) {
-            console.log(key)
+           
             if (i % key == 0) {
                 // The Map object holds key-value pairs and remembers
                 // The original insertion order of the keys
