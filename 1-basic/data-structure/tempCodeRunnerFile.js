@@ -1,23 +1,15 @@
- function powerFunc (x, y) {
-    if (y === 0)return 1;
+function inverseString(s) {
+    let i = 0, j = s.length-1;
 
-    let pow = Math.abs(y);
+    while(i < j) {
+
+        return (s[i]!=s[j]) ?  false :  true ;
+        i++;j--;
+    }
     
+    
+}
 
-    let ans = (pow%2) ? powerFunc(x*x, (pow-1)/2) * x : powerFunc(x*x, pow/2);
+console.log('fmie')
+console.log(inverseString('bakabi'));
 
-    return (y>0)?ans : 1/ans;
-
-};
-
-console.log(powerFunc(2,-10));
-
-// let i=10;
-// while(i--) {
-//     console.log(powerFunc(2,i));
-
-// }
-
-// console.log(1/2)
-let p = Math.abs(-10)
-console.log(p)
