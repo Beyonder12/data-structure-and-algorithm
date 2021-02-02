@@ -1,8 +1,8 @@
 var subsets = function(nums) {
-    let res = [[]], appendarr = [];
+    let res = [[]];
 
     for(let num of nums) {
-        appendarr = [];
+        appendarr = []
         for(let entry of res) {
             appendarr.push([...entry, num])
         }
@@ -23,3 +23,6 @@ console.log(subsets([1,2,3]))
 
 // Input: nums = [0]
 // Output: [[],[0]]
+a = []
+a.push([,1])
+console.log(a)
