@@ -1,16 +1,14 @@
-function digitOne(nums) {
+function sumZero(n) {
+  let result = [], c = Math.ceil(-n / 2), sum = 0;
+  for (let i = 0; i < n; i++) {
 
-  for (let i = nums.length - 1; i >= 0; i--) {
-    nums[i]++;
-    if (nums[i] > 9) {
-      nums[i] = 0;
-    } else {
-      return nums;
-    }
-
+    result.push(c);
+    sum += c;
+    c++;
   }
-  nums.unshift(1);
-  return nums;
+  console.log(result.indexOf(0))
+  if (n%2==0) { result.splice(result.indexOf(0),1,-sum); }
+  return result;
 }
 
-console.log(digitOne([9, 9, 9]))
+console.log(sumZero(9))
