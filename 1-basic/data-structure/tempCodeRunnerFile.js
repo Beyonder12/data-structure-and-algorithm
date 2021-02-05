@@ -1,15 +1,29 @@
-rome = function(s) {
-    s.filter(e=>Number(Number.isInteger(e)));
-    
-    return s;
-};
+function ListNode(val, next) {
+         this.val = (val===undefined ? 0 : val)
+         this.next = (next===undefined ? null : next)
+     }
 
-console.log(['123', 'a', 'b', '2'])
+     let arr = [100, 200, 300];
+     var node = new ListNode(0);
+     for (let i = 0; i < arr.length; i++) {
+        
+        if (node.val === 0){
+            node = new ListNode(arr[i]);
+        }
+        else {
+            curr =  node;
+            while(curr.next) {
+            curr = curr.next;
+            }
+         curr.next = new ListNode(arr[i]);
+        }
+        
+     }
+     
 
-console.log(Number.isInteger('1'))
+     console.log(node)
 
-function isLetter(str) {
-     return (str.length === 1 && str.match(/[a-z]/i)) ? true: false;
-  }
-
-  console.log(isLetter('a'))
+    //  let node = new ListNode(100);
+    //  node.next = new ListNode(200);
+    //  node.next = new ListNode(300)
+    //  console.log(node);
