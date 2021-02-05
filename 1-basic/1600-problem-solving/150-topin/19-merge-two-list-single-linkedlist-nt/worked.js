@@ -12,7 +12,7 @@ function ListNode(ele) {
       selectedNode = selectedNode.next
     } 
   
-    return list
+    return list;
   }
   
   l = [3, 1, 2, 3, 4, 5];
