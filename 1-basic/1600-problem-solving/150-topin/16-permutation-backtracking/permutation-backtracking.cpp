@@ -25,6 +25,7 @@ class Solution {
     }
 };
 int main() {
+    vector< vector<int> > permute(vector<int>& nums);
     int arr[] = {1,2,3};
     cout << Solution::permute(arr) << endl;
 }
