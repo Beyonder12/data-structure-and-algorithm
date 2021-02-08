@@ -1,29 +1,36 @@
-function ListNode(val, next) {
-         this.val = (val===undefined ? 0 : val)
-         this.next = (next===undefined ? null : next)
-     }
-
-     let arr = [100, 200, 300];
-     var node = new ListNode(0);
-     for (let i = 0; i < arr.length; i++) {
-        
-        if (node.val === 0){
-            node = new ListNode(arr[i]);
-        }
-        else {
-            curr =  node;
-            while(curr.next) {
-            curr = curr.next;
-            }
-         curr.next = new ListNode(arr[i]);
-        }
-        
-     }
-     
-
-     console.log(node)
-
-    //  let node = new ListNode(100);
-    //  node.next = new ListNode(200);
-    //  node.next = new ListNode(300)
-    //  console.log(node);
+var MinStack = function() {
+    this.elements = [];
+  };
+  
+  /**
+  
+   @param {number} x
+   @return {void}
+   */
+  MinStack.prototype.push = function(x) {
+    this.elements.push({
+      value: x,
+      min: this.elements.length === 0 ? x : Math.min(x, this.getMin()),
+    });
+  };
+  /**
+  
+   @return {void}
+   */
+  MinStack.prototype.pop = function() {
+    this.elements.pop();
+  };
+  /**
+  
+   @return {number}
+   */
+  MinStack.prototype.top = function() {
+    return this.elements[this.elements.length - 1].value;
+  };
+  /**
+  
+   @return {number}
+   */
+  MinStack.prototype.getMin = function() {
+    return this.elements[this.elements.length - 1].min;
+  };
