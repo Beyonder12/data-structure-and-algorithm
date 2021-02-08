@@ -40,5 +40,10 @@ console.log([[5,1,2,3,4],[1,2,3]].slice())
 console.log(JSON.stringify(permute([5, 3, 7, 1])));
 console.log(permutator([5, 3, 7, 1]));
 
-let a;
-console.log((a.length === true))
+
+let a =[];
+a[0]='a';
+a[1]='b';
+a[2]='c';
+a[4]='d';
+console.log(a.length)
