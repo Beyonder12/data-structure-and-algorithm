@@ -1,1 +1,1 @@
-1/ans
+a.length === 0
