@@ -3,11 +3,7 @@
 
 using namespace std;
 
-
-
-int main() {
-
-    vector<int> decode(vector<int>& A) {
+vector<int> decode(vector<int>& A) {
     int n = A.size() + 1, a = 0;
     for (int i= 0; i <= n; ++i) {
         a ^= i ;
@@ -22,7 +18,7 @@ int main() {
     return res;
 }
 
-
+int main() {
 
     std::vector<int> A = {1,2,3};
     A = {1,2};
