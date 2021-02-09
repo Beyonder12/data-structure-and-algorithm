@@ -38,6 +38,12 @@ var MinStack = function() {
  }
 
  let ms = new MinStack();
-
+ ms.push(100);
+ ms.push(200)
+ ms.push(300)
+ ms.push(50)
+ ms.push(100)
  console.log(ms);
- console.log("jng")
+ console.log(ms.getMin());
+ console.log(ms.top());
+ 
