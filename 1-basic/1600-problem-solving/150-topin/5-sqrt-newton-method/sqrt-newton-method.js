@@ -8,11 +8,11 @@ let sqrt = function(a) {
     const eq = (e) => e**2 - a;
     let xi = a;
     let yi = eq(xi);
-    while(yi > 0) {
+    while(yi > 0.1) {
         xi = xi-yi / (2*xi);
         yi = eq(xi);
     }
     return xi; 
 }
 
-console.log(sqrt(876543))
+console.log(sqrt(4))
