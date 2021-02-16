@@ -1,24 +1,16 @@
-1
-11
-21
-1211
 
 
-function countAccumulateIt(n) {
+function root(a) {
 
-  let str = "1";
+  let yi = a*a*a*a;
 
-  for (let i  = 0; i < n; i ++) {
-    let count = 1, newStr=str;
-    for (let j = 0; j < newStr.length; j++) {
-      if(newStr[j] === newStr[j+1]) count++;
-      else newStr = str[j] + count;
-    }
-    
+  while(yi > 0.001) {
+    xi = a*a - a*a*a*a/2*a*a
+    yi = xi*xi;
   }
 
-  return str;
+  return xi;
+
 }
 
-console.log(countAccumulateIt(4))
-console.log("hello")
+console.log(root(4))
