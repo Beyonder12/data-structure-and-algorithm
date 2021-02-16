@@ -10,4 +10,4 @@ const reverse = x => {
     if (out > Math.pow(2,31)) return 0;
     return out * negative;
 };
-console.log(reverse(123))
+console.log(reverse(-123))
