@@ -7,3 +7,4 @@ var removeDuplicates = function(nums) {
     return ++i;
 }
 
+console.log(removeDuplicates([1,2]))
