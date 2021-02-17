@@ -1,16 +1,16 @@
-
-
-function root(a) {
-
-  let yi = a*a*a*a;
-
-  while(yi > 0.001) {
-    xi = a*a - a*a*a*a/2*a*a
-    yi = xi*xi;
+var firstUniqChar = function(s) {
+  obj = {};
+  for (val of s) {
+      obj[val] = ++obj[val] || 1;
+  };
+  for(key in obj) {
+    
+    if (obj[key] === 1) return s.indexOf(key);
   }
 
-  return xi;
+  return -1
+};
 
-}
+let s = 'lleetcode';
 
-console.log(root(4))
+console.log(firstUniqChar(s));
