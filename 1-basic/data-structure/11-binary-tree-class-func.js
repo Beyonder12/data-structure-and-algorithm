@@ -1,47 +1,46 @@
 var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
 function Node(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
+  this.value = value;
+  this.left = null;
+  this.right = null;
 }
-
 function BinarySearchTree() {
 
-    this.root = null;
+  this.root = null;
+  // change code below this line
+  this.add = function (integer) {
 
-    this.add = function (integer) {
+    let curr = this.root;
 
-        let curr = this.root;
-
-        if(!curr) {
-            this.root = new Node(integer);
-            return undefined;
-        };
-
-        while(curr) {
-            if (integer < curr.value) {
-                if(!curr.left) {
-                    curr.left = new Node(integer);
-                    return undefined;
-                }
-                curr = curr.left;
-            }
-            else if (integer > curr.value) {
-                if (!curr.left) {
-                    curr.left = new Node(integer);
-                    return undefined;
-                }
-                curr = curr.left;
+    if (!curr) {
+      this.root = new Node(integer);
+      return undefined;
+    };
     
-            }
-            else if (integer > curr.value) {
-                if (!curr.right) {
-                    curr.right = new Node(integer);
-                    return undefined;
-                }
-                curr = curr.right;
-            }
-            else return null;
+    while (curr) {
+      if (integer < curr.value) {
+        if (!curr.left) {
+          curr.left = new Node(integer);
+          return undefined;
         }
+        curr = curr.left;
+      }
+      else if (integer > curr.value) {
+        if (!curr.right) {
+          curr.right = new Node(integer);
+          return undefined;
+        }
+        curr = curr.right;
+      }
+      else return null;
     }
+  }   
 }
+
+let bst = new BinarySearchTree();
+bst.add(100);
+bst.add(200);
+bst.add(50);
+bst.add(120);
+
+console.log(bst)
