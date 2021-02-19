@@ -38,9 +38,9 @@ function BinarySearchTree() {
 }
 
 let bst = new BinarySearchTree();
-bst.add(100);
-bst.add(200);
-bst.add(50);
-bst.add(120);
+bst.add(2);
+bst.add(5);
+bst.add(7);
+bst.add(9);
 
 console.log(bst)
