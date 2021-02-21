@@ -3,7 +3,7 @@ var containsDuplicate = function(nums) {
     for (c of nums) {
         count[c] = (count[c] || 0) + 1;
     }
-    console.log(count);
+   
     for (c in count) {
         if(count[c] > 1) return true;
     }
