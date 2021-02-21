@@ -42,5 +42,5 @@ bst.add(2);
 bst.add(5);
 bst.add(7);
 bst.add(9);
-
-console.log(bst)
+displayTree(bst)
+// console.log(bst)
