@@ -1,15 +1,14 @@
+ function runningSum(nums) {
+  let a = [];
 
-function power(x=3,y) {
+  for(let i = 0; i < nums.length; i++) {
+    sum = 0;
+    for(let j = 0; j <=i; j++) {
+      sum+=nums[j]
+    }
+    a.push(sum);
+  }
 
-  if(y === 0) return 1;
-
-  pow = Math.abs(y);
-
-  let result =  (pow % 2 === 0) ? power(x*x, pow/2) : x*power(x*x, (pow-1)/2);
-
-  return (y>0) ? result : 1 / result;
-
- 
+  return a;
 }
-
-console.log(power(2))
+console.log(runningSum([1,2,3]));
