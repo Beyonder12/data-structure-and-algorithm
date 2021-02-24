@@ -20,4 +20,4 @@ var countAndSay = function(n) {
     return str;
 };
 
-console.log(countAndSay(4))
+console.log(countAndSay(5))           
