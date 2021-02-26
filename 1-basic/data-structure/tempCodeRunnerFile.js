@@ -1,20 +1,25 @@
-// function a(nums) {
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
+  if(x<0) return false;
+  let y = x, res = 0;
+  while(y) {
+      remain = y % 10;
+      res = res*10 + remain; 
+      y = Math.floor(y /10);
+  }
   
-//   nums.sort((a,b)=>a-b);
-//   let l = nums.length - 1, ans = [], sumMax=0;
-//   for(let i = 0; i < nums.length; i++) {
-    
-//     sumMax += nums[nums.length - 1 -i];
-//     if(sumMax > nums.splice()) return ans.push(nums[nums.length - 1 -i])
+  return x === res;
+  
+};
 
-//   }
+console.log(isPalindrome(-121))
 
-//   return ans;
-// }
+// x = 123;
+// y = Math.floor(x /10);
+// console.log(y)
+// y = Math.floor(x /10);
+// console.log(y)
 
-
-
-let test = [1,2,3];
-console.log(test.push(1));
-
-console.log(test)
