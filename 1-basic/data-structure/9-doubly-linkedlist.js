@@ -1,3 +1,4 @@
+/*
 var Node = function(data, prev) {
     this.data = data;
     this.prev = prev;
@@ -72,3 +73,49 @@ dll.add(200);
 // dll.add(400);
 
 console.log(dll );
+*/
+
+class Node {
+    constructor(val) {
+        this.val = val;
+        this.prev = null;
+        this.next = null;
+    }
+};
+
+class DoublyLinkedList {
+    constructor() {
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
+    }
+
+    push(val) {
+        let node = new Node(val);
+        if(!this.head) {
+            this.head = node;
+            this.tail = node;
+        } else {
+            let temp = this.tail;
+            this.tail = node;
+            node.prev = temp;
+            temp.next = node;
+        }
+        this.length++;
+        return this;
+
+    }
+};
+
+// let list = new DoublyLinkedList;
+// console.log(list);
+// list.push(10);
+// console.log(list)
+// list.push(20);
+// console.log(list)
+// list.push(30);
+// console.log(list)
+let node = new Node(30);
+console.log(node)
+node.prev = new Node(40);
+console.log(node)
