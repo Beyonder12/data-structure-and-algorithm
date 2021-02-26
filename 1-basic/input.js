@@ -1,49 +1,75 @@
-var permArr = [],
-  usedChars = [];
+// Recursive
 
-function permute(input) {
-  var i, ch;
-  for (i = 0; i < input.length; i++) {
-    ch = input.splice(i, 1)[0];
-    usedChars.push(ch);
-    if (input.length == 0) {
-      permArr.push(usedChars.slice());
+var subsets = function(nums) {
+	let res=[]                    // the final arr, which we will display
+	let auxArr = [], i=0             // global vars
+    
+    function recur(nums,i,auxArr){
+        if(i==nums.length) { res.push(auxArr); return } //operation of recursion will be upto i=n-1
+													 // when it will hit, i==n, it will store the computed arr, in the final arr, and break(return)
+        
+		// take it
+        recur(nums, i+1, [...auxArr, nums[i] ] ) //or, we can use 'aux.concat(nums[i])'
+		
+		// dont take
+        recur(nums, i+1, auxArr)
+    
     }
-    permute(input);
-    input.splice(i, 0, ch);
-    usedChars.pop();
+    
+    recur(nums,i,auxArr) // passing the global variable declared already
+    return res        // rerturn the final 2d arr
+    
+    
+};
+	        //                1 2 3
+ 		      //     		  /           \
+ 		      //       	1 			      []	
+          //      /     \           /.  \
+          //   1 2	     1	       2.    []
+          //   /  \		/ \         / \    / \
+          // 123.   12. 13. 1.    23. 2. 3. [].
+
+// Iterative
+var subsets = function(nums) {
+  let res = [[]], appendarr= []
+  
+  for(let num of nums){
+      appendarr = []
+      for(let entry of res){
+          appendarr.push([...entry, num])
+      }
+      
+      res.push(...appendarr)
   }
-  return permArr
+  
+  return res
+  
 };
 
-const permutator = (inputArr) => {
-  let result = [];
 
-  const permute = (arr, m = []) => {
-    if (arr.length === 0) {
-      result.push(m)
-    } else {
-      for (let i = 0; i < arr.length; i++) {
-        let curr = arr.slice();
-        let next = curr.splice(i, 1);
-        permute(curr.slice(), m.concat(next))
-     }
-   }
- }
+// 0 (Empty)             :         [] 
+// 1 (Adding 1 to it)    :         [] [1] 
+// 2 (Adding 2 to it)    :         [] [1] [2] [1,2]
+// 3 (Adding 3 to it)    :         [] [1] [2] [1,2] [3] [1,3] [2,3] [1,2,3]
 
- permute(inputArr)
-
- return result;
-}
-
-console.log([[5,1,2,3,4],[1,2,3]].slice())
-console.log(JSON.stringify(permute([5, 3, 7, 1])));
-console.log(permutator([5, 3, 7, 1]));
-
-
-let a =[];
-a[0]='a';
-a[1]='b';
-a[2]='c';
-a[4]='d';
-console.log(a.length)
+//Bit Masking
+var subsets = function(nums) {
+  const result = [];
+  result.push([]);   // handling the first case (i=0). for that, an empty arr should be there
+  
+  let size = nums.length
+  
+  for(let i = 1; i < (1<<size) ; i++){   // generating for range upto [(2^n)-1]
+    let subset = [];
+    let bitmask=0
+    
+      while(bitmask<size){
+          if(i & (1 << bitmask)){           // if it exists (not zero)
+              subset.push( nums[bitmask] );
+          }
+          bitmask++   
+      }
+      result.push(subset)
+  }
+  return result
+};
