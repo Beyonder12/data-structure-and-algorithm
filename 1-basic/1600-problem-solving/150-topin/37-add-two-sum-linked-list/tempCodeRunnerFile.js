@@ -1,0 +1,1 @@
+ console.log(new ListNode(100))
