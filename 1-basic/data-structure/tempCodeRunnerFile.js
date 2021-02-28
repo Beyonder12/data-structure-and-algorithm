@@ -1,25 +1,16 @@
-/**
- * @param {number} x
- * @return {boolean}
- */
-var isPalindrome = function(x) {
-  if(x<0) return false;
-  let y = x, res = 0;
-  while(y) {
-      remain = y % 10;
-      res = res*10 + remain; 
-      y = Math.floor(y /10);
+var maxProfit = function(prices) {
+  let max=0;
+  for(let i = 0; i < prices.length; i++) {
+    
+      for(let j = i+1; j < prices.length; j++) {
+          diff = prices[j] - prices[i];
+          // console.log(diff)
+          if(max < diff) max = diff;
+      }
   }
-  
-  return x === res;
-  
+  return max;
 };
 
-console.log(isPalindrome(-121))
+console.log(maxProfit([7,1,5,3,6,4]))
 
-// x = 123;
-// y = Math.floor(x /10);
-// console.log(y)
-// y = Math.floor(x /10);
-// console.log(y)
-
+console.log(57+81)
