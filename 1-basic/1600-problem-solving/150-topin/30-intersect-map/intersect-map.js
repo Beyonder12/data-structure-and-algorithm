@@ -18,4 +18,4 @@ var intersect = function(num1, num2) {
     return result;
 };
 
-console.log(intersect([1,2,3], [1,2]))
+console.log(intersect([1,2,1,2,3], [1,2,1]))
