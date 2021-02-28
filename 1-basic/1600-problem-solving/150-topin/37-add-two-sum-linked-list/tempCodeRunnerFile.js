@@ -1,1 +1,2 @@
- console.log(new ListNode(100))
+1);
+console.log(l2);
