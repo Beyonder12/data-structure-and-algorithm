@@ -1,16 +1,25 @@
-var maxProfit = function(prices) {
-  let max=0;
-  for(let i = 0; i < prices.length; i++) {
-    
-      for(let j = i+1; j < prices.length; j++) {
-          diff = prices[j] - prices[i];
-          // console.log(diff)
-          if(max < diff) max = diff;
-      }
+var countConsistentStrings = function(allowed, words) {
+  let obj = {}, objs = [], count = 0;
+  
+  for(val of allowed) {
+      obj[val] = ++obj[val] || 1;
   }
-  return max;
+
+  for(let i = 0; i < words.length; i++) {
+    for(let j = 0; j < words[i].length; j++) {
+      for(key in obj) {
+        if (key !== words[i][j]) {count++; i++;}
+      }
+    }
+  }
+  console.log(count)
+  return count;
 };
 
-console.log(maxProfit([7,1,5,3,6,4]))
+ 
+// console.log(countConsistentStrings('ab',["ad","bd","aaab","baa","badab"]))
+let set = new Set();
 
-console.log(57+81)
+set.add(10)
+set.add(10)
+console.log(set.has(10))
