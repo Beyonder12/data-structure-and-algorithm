@@ -53,7 +53,7 @@ var mergeTwoLists = function(l1, l2) {
 
     // console.log(l1);
     // console.log(l2);
-    console.log(mergeTwoLists(l1,l2).next.next);
+    console.log(mergeTwoLists(l1,l2).next);
 
 
 // Input: l1 = [1,2,4], l2 = [1,3,4]
