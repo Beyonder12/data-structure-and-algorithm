@@ -1,14 +1,13 @@
-var climbStairs = function(n) {    
-    let prev = 0;
-    let cur = 1;
-    let temp;
+var defangIPaddr = function(address) {
     
-    for (let i = 0; i < n; i++) {
-        temp = prev;
-        prev = cur;
-        cur += temp; 
-    }
-    return cur;
+    // let out = address.replaceAll(".", "[.]");
+    return ;
 };
 
-console.log(climbStairs(4))
+
+
+console.log(defangIPaddr("1.1.1.1"));
+
+const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
+
+console.log(p.replaceAll('dog', 'monkey'));
