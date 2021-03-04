@@ -25,4 +25,11 @@
    */
 
    var obj = new ParkingSystem(3, 2, 1)
-   var param_1 = obj.addCar(1)
+//    var param_1 = obj.addCar(1);
+   console.log(obj);
+   console.log(obj.addCar(1));
+   console.log(obj.addCar(1));
+   console.log(obj.addCar(1));
+   console.log(obj.addCar(1));
+   console.log(obj);
+   
