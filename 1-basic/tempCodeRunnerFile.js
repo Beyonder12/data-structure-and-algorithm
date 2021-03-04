@@ -1,23 +1,17 @@
-/**
- * @param {string} jewels
- * @param {string} stones
- * @return {number}
- */
-var numJewelsInStones = function(jewels, stones) {
-    let i = 0, j = 0, count = 0;
-    while(jewels.length - i) {
-        // console.log(i)
-        i++;
-        while(stones.length-j) {
-            console.log(j)
-           if (jewels[i] === stones[j]) count++;
-           j++;
+var smallerNumbersThanCurrent = function(nums) {
+    ans = [];
+    for (let i = 0; i < nums.length; i++) {
+        let count = 0;
+        for (let j = 0; j < nums.length; j++) {
+            if(nums[i] > nums[j]) count++;
         }
+        
+        ans.push(count) ;
     }
     
-    // return count;
+    return ans;
 };
 
-jewels = "aA", stones = "aAAbbbb"
+nums = [8,1,2,2,3]
 
-console.log(numJewelsInStones(jewels, stones))
+console.log(smallerNumbersThanCurrent(nums))
