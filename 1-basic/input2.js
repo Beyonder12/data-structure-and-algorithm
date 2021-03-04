@@ -1,13 +1,12 @@
-var defangIPaddr = function(address) {
-    
-    // let out = address.replaceAll(".", "[.]");
-    return ;
-};
+const removeDuplicates = s => {
+    const s2 = s.replace(/(.)\1/g, '');
+    return s2.length === s.length ? s : removeDuplicates(s2);
+  };
 
-
-
-console.log(defangIPaddr("1.1.1.1"));
-
-const p = 'The quick brown fox jumps over the lazy dog. If the dog reacted, was it really lazy?';
-
-console.log(p.replaceAll('dog', 'monkey'));
+  s = "aababaab"
+  s2 = s.replace(/(.)\1/g, '');
+  console.log(s2) 
+// s = str.split("");
+// console.log(s.shift())
+// console.log(s)
+// console.log(removeDuplicates(str))
