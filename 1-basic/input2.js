@@ -1,12 +1,18 @@
-const removeDuplicates = s => {
-    const s2 = s.replace(/(.)\1/g, '');
-    return s2.length === s.length ? s : removeDuplicates(s2);
-  };
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var subtractProductAndSum = function(n) {
+    let product = 1, sum = 0, remain;
+    while(n) {
+        remain = n%10;
+        product *= remain;
+        sum += remain
+        n = Math.floor(n/10);
+    }
+    
+    return product - sum;
+    
+};
 
-  s = "aababaab"
-  s2 = s.replace(/(.)\1/g, '');
-  console.log(s2) 
-// s = str.split("");
-// console.log(s.shift())
-// console.log(s)
-// console.log(removeDuplicates(str))
+console.log(subtractProductAndSum(234))
