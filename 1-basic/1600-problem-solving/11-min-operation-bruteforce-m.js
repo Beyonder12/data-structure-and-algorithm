@@ -12,7 +12,7 @@
              if(boxes[j] == 1) answer[i] += Math.abs(j-i);
          }
      };
-     return answer;
+     return answer.join("");
  };
 
  console.log(minOperations("110"));
