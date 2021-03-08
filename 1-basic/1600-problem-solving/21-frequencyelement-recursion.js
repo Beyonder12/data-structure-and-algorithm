@@ -14,7 +14,7 @@ var decompressRLElist = function(nums) {
     } 
     return arr;
 }
-
+// nums[i] is the frequency and the nums[i+1] is the element
 console.log(decompressRLElist([1,2,3,4]));
 
 // This is the interesting recursion method 
