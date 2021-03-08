@@ -31,5 +31,5 @@
    console.log(obj.addCar(1));
    console.log(obj.addCar(1));
    console.log(obj.addCar(1));
-   console.log(obj);
+   
    
