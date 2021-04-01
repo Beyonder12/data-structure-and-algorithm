@@ -1,18 +1,19 @@
 /**
- * @param {string} s
+ * @param {number} n
  * @return {number}
  */
-var balancedStringSplit = function(s) {
-    let ans = 0, c=0;
-    for (let i = 0; i < s.length; i++) {
-        if(s[i] === 'R') c++;
-        if(s[i] === 'L') c--;
-        if (c === 0) ans++;
-        
-    }; 
-    return ans;
-}
+ var numberOfMatches = function(n) {
+  let matches = 0;
+  while(n > 1) {
+      if(n % 2 === 0) {
+          matches += n/2; 
+          n = n/2;
+          
+      }
+      else {matches += (n-1)/2; n = (n-1)/2 + 1};
+      
+  }
+  return matches;
+};
 
-s = "RLRRLLRLRLL"
-
-console.log(balancedStringSplit(s))
+console.log(numberOfMatches(7))
