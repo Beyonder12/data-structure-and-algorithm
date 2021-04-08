@@ -1,21 +1,19 @@
 import java.util.*;
 
-class Solution {
-    
-    static int reverse(int x) {
-        int rev = 0;
-        while (x != 0) {
-            int pop = x % 10;
-            x /= 10;
-            if (rev > Integer.MAX_VALUE/10 || (rev == Integer.MAX_VALUE / 10 && pop > 7)) return 0;
-            if (rev < Integer.MIN_VALUE/10 || (rev == Integer.MIN_VALUE / 10 && pop < -8)) return 0;
-            rev = rev * 10 + pop;
-        }
-        return rev;
-    }
+public class Solution {
+    public static void main(String [] args) {
+        char[] ch = { 'S', 'N', 'L'};
+        for (int i = 0; i < 3; i++) {
+            char temp1 = ch[1];
+            ch[1] = ch[2];
+            ch[2] = temp1;
+            char temp2 = ch[0];
+            ch[0] = ch[1];
+            ch[1] = temp2;
 
-    public static void main(String[] args) {
-        System.out.println(reverse(123987654789098765467890987657890987656789));
+            
+        }
+        System.out.println(ch);
     }
 }
 
