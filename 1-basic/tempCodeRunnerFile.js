@@ -1,19 +1,11 @@
-/**
- * @param {number} n
- * @return {number}
- */
- var numberOfMatches = function(n) {
-  let matches = 0;
-  while(n > 1) {
-      if(n % 2 === 0) {
-          matches += n/2; 
-          n = n/2;
-          
-      }
-      else {matches += (n-1)/2; n = (n-1)/2 + 1};
-      
+var findNumbers = function(nums) {
+  let count = 0;
+  for(val of nums) {
+    
+      if(JSON.stringify(val).length % 2 === 0) count++;
   }
-  return matches;
+  
+  return count;
 };
 
-console.log(numberOfMatches(7))
+console.log(findNumbers([12,345,2,6,7896]))
