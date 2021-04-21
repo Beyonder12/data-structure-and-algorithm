@@ -1,23 +1,53 @@
-var maximum69Number  = function(num) {
-  let str = String(num).split(''), i = 0;
-      
-  while(i < str.length) {
-      if(str[i] == 6) {str.splice(i, 1, '9'); break;}
-      i++;
+var freqAlphabets = function(s) {
+  let a = [];
+  const dictionary = {
+      '1' : 'a',
+      '2' : 'b',
+      '3' : 'c',
+      '4' : 'd',
+      '5' : 'e',
+      '6' : 'f',
+      '7' : 'g',
+      '8' : 'h',
+      '9' : 'i',
+      '10#' : 'j',
+      '11#' : 'k',
+      '12#' : 'l',
+      '13#' : 'm',
+      '14#' : 'n',
+      '15#' : 'o',
+      '16#' : 'p',
+      '17#' : 'q',
+      '18#' : 'r',
+      '19#' : 's',
+      '20#' : 't',
+      '21#' : 'u',
+      '22#' : 'v',
+      '23#' : 'w',
+      '24#' : 'x',
+      '25#' : 'y',
+      '26#' : 'z',
+
   }
-  
-  return Number(str.join(''));
+  console.log(s)
+  for(let i = 0; i < s.length; i++) {
+    console.log(s[i])
+      if(s[i+2] === '#') {
+        a .push(dictionary[s[i]+s[i+1]+s[i+2]]);
+        i+=2;
+      }
+      else {
+        a.push(dictionary[s[i]])
+      }
+      
+  }
+  return a.join('');
   
 };
 
-num = 9669;
+s = "10#11#12"
+console.log(freqAlphabets(s))
 
-console.log(maximum69Number(num))
 
-const maximum69Number = num => {
-  if (num / 1000 << 0 === 6) return num + 3000;
-  if ((num / 100 << 0) % 10 === 6) return num + 300;
-  if (num % 100 / 10 << 0 === 6) return num + 30;
-  if (num % 10 === 6) return num + 3;
-  return num;
-};
+const map = {"1":"a","2":"b","3":"c","4":"d","5":"e","6":"f","7":"g","8":"h","9":"i","10":"j","11":"k","12":"l","13":"m","14":"n","15":"o","16":"p","17":"q","18":"r","19":"s","20":"t","21":"u","22":"v","23":"w","24":"x","25":"y","26":"z"};
+const freqAlphabets = s => s.replace(/(\d\d#|\d)/g, t => map[t.length === 3 ? t[0] + t[1] : t]);
