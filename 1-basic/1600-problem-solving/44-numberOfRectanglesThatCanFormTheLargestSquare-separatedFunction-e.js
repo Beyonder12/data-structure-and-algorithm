@@ -1,3 +1,9 @@
+/**
+ * 
+ * @param {number [][]} rectangles 
+ * @returns {number}
+ */
+
 const countGoodRectangles = rectangles => {
     let maxLen = getMaxLen(rectangles);
     let res = 0;
