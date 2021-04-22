@@ -1,29 +1,40 @@
-var diagonalSum = function(mat) {
-  let sum = 0;
-  for(let i = 0; i < mat.length; i++) {
-      console.log(mat.length - 1 - i)
-      // console.log(mat[i][i])
-      // console.log(mat[i][mat.length - 1 - i])
-      if (i === mat.length - 1 - i) {sum += mat[i][i]; continue;}
-      else {
-        sum += mat[i][i];
-        sum += mat[i][mat.length - 1 - i]
-      }
+
+
+// SOLUTION 1 - Map
+// We could use a map to store the status of city:
+
+// If it's a start of path, make the value plus 1.
+// If it's a end of path, make the value minus 1.
+// Finally, most cities will be 0. The start of whole path will be 1. And the destination city will be -1.
+
+const destCity = (paths) => {
+  const map = new Map();
+  console.log(map)
+  for (const path of paths) {
+    map.set(path[0], map.has(path[0]) ? 0 : 1);
+    map.set(path[1], map.has(path[1]) ? 0 : -1);
+    console.log(map)
   }
-  
-  return sum;
-  
+  for (const item of map) {
+    if (item[1] === -1) return item[0];
+  }
 };
 
+paths = [["London","New York"],["New York","Lima"],["Lima","Sao Paulo"]]
+console.log(destCity(paths))
 
-// mat = [[1,2,3,4],
-//       [5,6,7,8],
-//       [9,10,11,12],
-//       [13,14,15,16]]
+// SOLUTION 2 - Set
+// Actually, we don't need all informations. So, we may not to store them but just a mark.
 
-mat = [[1,1,1,1],
-      [1,1,1,1],
-      [1,1,1,1],
-      [1,1,1,1]]
+// Here we use a Set to store the mark:
 
-console.log(diagonalSum(mat))
+// We mark all start of paths.
+// The destination city must not be in this set.
+
+const destCity = (paths) => {
+  const set = new Set();
+  for (const path of paths) set.add(path[0]);
+  for (const path of paths) {
+    if (!set.has(path[1])) return path[1];
+  }
+};
