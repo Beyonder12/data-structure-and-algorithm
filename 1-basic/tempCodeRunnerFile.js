@@ -1,40 +1,15 @@
+var maxProduct = function(nums) {
+  max1 = Math.max(...nums) ;
+  nums.splice(nums.indexOf(max1), 1);
+  max2 = Math.max(...nums) ;
 
-
-// SOLUTION 1 - Map
-// We could use a map to store the status of city:
-
-// If it's a start of path, make the value plus 1.
-// If it's a end of path, make the value minus 1.
-// Finally, most cities will be 0. The start of whole path will be 1. And the destination city will be -1.
-
-const destCity = (paths) => {
-  const map = new Map();
-  console.log(map)
-  for (const path of paths) {
-    map.set(path[0], map.has(path[0]) ? 0 : 1);
-    map.set(path[1], map.has(path[1]) ? 0 : -1);
-    console.log(map)
-  }
-  for (const item of map) {
-    if (item[1] === -1) return item[0];
-  }
+  console.log(max1, max2)
+  return --max1 * --max2
+  console.log(nums)
+  console.log(nums.indexOf(5))
+  
 };
 
-paths = [["London","New York"],["New York","Lima"],["Lima","Sao Paulo"]]
-console.log(destCity(paths))
+nums = [3,4,5,2]
 
-// SOLUTION 2 - Set
-// Actually, we don't need all informations. So, we may not to store them but just a mark.
-
-// Here we use a Set to store the mark:
-
-// We mark all start of paths.
-// The destination city must not be in this set.
-
-const destCity = (paths) => {
-  const set = new Set();
-  for (const path of paths) set.add(path[0]);
-  for (const path of paths) {
-    if (!set.has(path[1])) return path[1];
-  }
-};
+console.log(maxProduct(nums))
