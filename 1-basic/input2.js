@@ -21,3 +21,4 @@ myArray = [
 console.log(myArray)
 
 console.log(JSON.stringify(myArray))
+console.log(3*'p')
