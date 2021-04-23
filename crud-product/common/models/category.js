@@ -151,3 +151,74 @@ module.exports = function(Category) {
   Category.disableRemoteMethodByName('createChangeStream', true);
 
 }
+
+
+var category = [
+  {
+    type: "book",
+    themeCategoryList: [
+      {
+        themeCategoryName: "architecture & design",
+        subThemeCategoryList: [
+          { subThemeCategoryName: "building book"},
+          { subThemeCategoryName: "code & standards book"},
+          { subThemeCategoryName: "decoration & ornament book"},
+          { subThemeCategoryName: "kitchen design book"},
+          { subThemeCategoryName: "room design book"},
+        ]
+      },
+      {
+        themeCategoryName: "law book",
+        subThemeCategoryList: [
+          { subThemeCategoryName: "cake recipe"},
+          { subThemeCategoryName: "baby & toddler food recipe"},
+          { subThemeCategoryName: "diet food recipe"},
+          { subThemeCategoryName: "cooking recipe"},
+          { subThemeCategoryName: "drinking & dessert recipe"},
+        ]
+      },
+      {
+        themeCategoryName: "cooking book",
+        subThemeCategoryList: [
+          { subThemeCategoryName: "cake recipe"},
+          { subThemeCategoryName: "baby & toddler food recipe"},
+          { subThemeCategoryName: "diet food recipe"},
+          { subThemeCategoryName: "cooking recipe"},
+          { subThemeCategoryName: "drinking & dessert recipe"},
+        ]
+      },
+      {
+        themeCategoryName: "cooking book",
+        subThemeCategoryList: [
+          { subThemeCategoryName: "cake recipe"},
+          { subThemeCategoryName: "baby & toddler food recipe"},
+          { subThemeCategoryName: "diet food recipe"},
+          { subThemeCategoryName: "cooking recipe"},
+          { subThemeCategoryName: "drinking & dessert recipe"},
+        ]
+      },
+      {
+        themeCategoryName: "cooking book",
+        subThemeCategoryList: [
+          { subThemeCategoryName: "cake recipe"},
+          { subThemeCategoryName: "baby & toddler food recipe"},
+          { subThemeCategoryName: "diet food recipe"},
+          { subThemeCategoryName: "cooking recipe"},
+          { subThemeCategoryName: "drinking & dessert recipe"},
+        ]
+      },
+    ]
+  },
+  {
+    type: "kitchen",
+  },
+  {
+    type: "electronic",
+  },
+  {
+    type: "kid & baby fashion",
+  },
+  {
+    type: "moslem fashion",
+  }
+]
