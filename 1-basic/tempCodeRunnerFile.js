@@ -1,45 +1,35 @@
 /**
- * @param {number[][]} grid
- * @return {number}
+ * @param {number[]} prices
+ * @return {number[]}
  */
- var countNegatives = function(grid) {
-  let count = 0;
-  for (ele1 of grid) {
-      for (ele2 of ele1) {
-          if(ele2 < 0) count ++;
+ var finalPrices = function(prices) {
+  let a = [];
+  for(let i = 0; i < prices.length; i++) {
+      for(let j = i+1; j < prices.length; j++) {
+          if(prices[i] >= prices[j]) {
+              a.push(prices[i] - prices[j]); break;
+          } 
+          if (j === prices.length - 1) a.push(prices[i])
       }
   }
-  return count;
+  a.push(prices[prices.length - 1])
+  
+  return a;
 };
 
-
-/**
- * @param {number[][]} grid
- * @return {number}
- */
- var countNegatives = function(grid) {
-  let count = 0;
-  for(const row of grid){
-    const index = searchFirstNegativeIndex(row)
-    count+= row.length - index;
-  }
-  return count
-};
-
-function searchFirstNegativeIndex(arr,target){
-  let r = arr.length - 1;
-  let l = 0;
-  while(l <= r){
-    const mid = Math.floor((l+r)/2)
-    if(arr[mid] < 0){
-      r = mid-1
-    }else{
-      l = mid+1
-    }
-  }
-  return l
+const finalPrices = prices => {
+  const checker = (x, arr) => {
+  const discount = arr.find(el => el <= x)
+  return discount ? x - discount : x
+}    
+return prices.map((p, i, arr) => checker(p, arr.slice(i + 1)))
 }
 
-// Input: grid = [[4,3,2,-1],[3,2,1,-1],[1,1,-1,-2],[-1,-1,-2,-3]]
-// Output: 8
-// Explanation: There are 8 negatives number in the matrix.
+
+// Input: prices = [8,4,6,2,3]
+// Output: [4,2,4,2,3]
+// Explanation: 
+// For item 0 with price[0]=8 you will receive a discount equivalent to prices[1]=4, therefore, the final price you will pay is 8 - 4 = 4. 
+// For item 1 with price[1]=4 you will receive a discount equivalent to prices[3]=2, therefore, the final price you will pay is 4 - 2 = 2. 
+// For item 2 with price[2]=6 you will receive a discount equivalent to prices[3]=2, therefore, the final price you will pay is 6 - 2 = 4. 
+// For items 3 and 4 you will not receive any discount at all.
