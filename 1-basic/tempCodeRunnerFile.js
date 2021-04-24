@@ -1,17 +1,45 @@
-var sumZero = function(n) {
-  let arr =  Array(n).fill(0), sum = 0;
-  for(let i = 0; i < n -1; i++) {
-    arr[i] = Math.floor(Math.random()<0.5 ? Math.random()*-100 :Math.random()*100 )
-    sum += arr[i];
+/**
+ * @param {number[][]} grid
+ * @return {number}
+ */
+ var countNegatives = function(grid) {
+  let count = 0;
+  for (ele1 of grid) {
+      for (ele2 of ele1) {
+          if(ele2 < 0) count ++;
+      }
   }
-  arr[n-1] = sum*-1;
-
-  // sum2 = arr.reduce((c,v)=> c+v);
-  // console.log(sum2)
-  // console.log(sum)
-  return arr;
-  
+  return count;
 };
 
-n = 5
-console.log(sumZero(n));
+
+/**
+ * @param {number[][]} grid
+ * @return {number}
+ */
+ var countNegatives = function(grid) {
+  let count = 0;
+  for(const row of grid){
+    const index = searchFirstNegativeIndex(row)
+    count+= row.length - index;
+  }
+  return count
+};
+
+function searchFirstNegativeIndex(arr,target){
+  let r = arr.length - 1;
+  let l = 0;
+  while(l <= r){
+    const mid = Math.floor((l+r)/2)
+    if(arr[mid] < 0){
+      r = mid-1
+    }else{
+      l = mid+1
+    }
+  }
+  return l
+}
+
+// Input: grid = [[4,3,2,-1],[3,2,1,-1],[1,1,-1,-2],[-1,-1,-2,-3]]
+// Output: 8
+// Explanation: There are 8 negatives number in the matrix.
