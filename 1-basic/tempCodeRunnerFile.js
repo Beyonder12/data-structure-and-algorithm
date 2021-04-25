@@ -1,37 +1,33 @@
+
+ // Definition for a binary tree node.
+  function TreeNode(val, left, right) {
+     this.val = (val===undefined ? 0 : val)
+     this.left = (left===undefined ? null : left)
+     this.right = (right===undefined ? null : right)
+ }
+ 
 /**
- * 
- * @param {number[]} nums 
- * @returns {number}
+ * @param {TreeNode} root
+ * @return {TreeNode}
  */
-var sumOfUnique = function(nums) {
-  let obj = {}, sum = 0;
-  for (ele of nums) {
-      obj[ele] = ++obj[ele] || 1;
-  }
-  console.log(obj)
-  
-  for(key in obj) {
-      if(obj[key] === 1) sum += Number(key);
-  }
-  
-  return sum;
+
+
+
+var increasingBST = function(root) {
+   let result = []; // node value from in order
+
+   function inOrder(node) {
+     if(!node) return;
+     inOrder(node.left);
+     result.push(node.val);
+     inOrder(node.right)
+   }
+
+   inOrder(root);
+   console.log(result)
+    
 };
 
-
-var sumOfUnique = function(nums) {
-  let numMap = new Map(),
-  curr = 0;
-nums.forEach((n) => {
-  numMap.set(n, numMap.get(n) + 1 || 1);
-});
-numMap.forEach((value, key) => {
-  if (value === 1) {
-    curr += key;
-  }
-});
-return curr; 
-};
-
-nums = [1,2,3,2]
-
-console.log(sumOfUnique(nums))
+root = [5,3,6,2,4,null,8,1,null,null,null,7,9]
+console.log(new TreeNode(root))
+console.log(increasingBST(root))
