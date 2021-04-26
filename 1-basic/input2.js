@@ -1,51 +1,20 @@
 /**
- * @param {string} moves
- * @return {boolean}
+ * @param {string} s
+ * @return {number[]}
  */
- var judgeCircle = function(moves) {
-  let x = 0, y = 0, values = {L: -1, D: -1, R: 1, U: 1};
-  for(let i = 0; i < moves.length; i++) {
-      // console.log(moves[i] === 'L' || moves[i] === 'R' )
-      // console.log(values[moves[i]])
-      (moves[i] === 'L' || moves[i] === 'R') ? x += values[moves[i]] : y += values[moves[i]];
+ const diStringMatch = (S) => {
+  let num = [];
+  let inc = 0;
+  let dec = S.length;
+  let i = 0;
+  while(num.length !== S.length+1){
+      num[i] = S[i] === 'D'? dec--: inc++;
+      i++;
   }
-
-  return (x===0 && y===0) ? true : false;
-  
+  return num;
 };
 
-var judgeCircle1 = function(moves) {    
-  let x=0,y=0
-  for(i=0;i<moves.length;i++){
-      switch (moves[i]) {
-          case 'R':
-              x++;
-              break;
-          case 'L':
-              x--;
-              break;
-          case 'U':
-              y++;
-              break;
-          case 'D':
-              y--;
-              break;
-      }
-  }
-   return x === 0 && y === 0
+Input: s = "IDID"
+Output: [0,4,1,3,2]
 
-  
-};
-moves = 'UD'
-moves1 = 'LL'
-
-
-console.log(judgeCircle(moves))
-console.log(judgeCircle1(moves1))
-console.log('====================')
-console.log('ok')
-
-
-// Input: moves = "UD"
-// Output: true
-// Explanation: The robot moves up once, and then down once. All moves have the same magnitude, so it ended up at the origin where it started. Therefore, we return true.
+console.log(diStringMatch(s))
