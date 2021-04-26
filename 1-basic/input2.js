@@ -1,41 +1,19 @@
-heights = [1,1,4,2,1,3]
-
-
-/**
- * @param {number[]} heights
- * @return {number}
- */
- var heightChecker = function(heights) {
-  let expected = [...heights], count = 0;
+var countBalls = function(lowLimit, highLimit) {
+  var count = new Int8Array(10)
   
-  expected.sort((a,b) => a - b);
+  for(let i = lowLimit; i <= highLimit; i++) {
+      (i > 9) ? count[String(i).split('').reduce((c,v) => Number(c) + Number(v))] = ++count[String(i).split('').reduce((c,v) => Number(c) + Number(v))] || 1 : count[i] = ++count[i] || 1;
+  };
+
+  return Math.max(...count);
   
-  for (let i = 0; i < heights.length; i++) {
-      if(heights[i] !== expected[i]) count++;
-  }
-  // console.log( expected)
-  // console.log( heights)
-  return count;
- 
 };
 
-const heightChecker1 = heights => {
-  const count = new Int8Array(101);
-  // console.log(count)
-  for (let i = 0; i < heights.length; ++i) ++count[heights[i]];
-  
-  let ret = idx = 0;
-  console.log(count.slice(0,5), heights)
-  for (let i = 0; i < 101; ++i) {
-    
-    while (count[i]--) heights[idx++] !== i && ++ret;
-  }
-  return ret;
-};
+lowLimit = 1, highLimit = 10
 
-// console.log(heightChecker(heights))
-console.log(heightChecker1(heights))
+console.log(countBalls(lowLimit, highLimit))
 
-for (let i = 0; i < 5;++i) console.log(i);
+i = 11
+// console.log(String(i).split('').reduce((c,v) => Number(c) + Number(v)))
 
-// console.log(a,b,c)
+console.log(2 ^ 10)
