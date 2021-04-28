@@ -42,17 +42,17 @@ var reverseWords = function(s) {
   }
 
   var reverseWords2 = function(s) {
-      let copy = [...s];
+       s = [...s];
       let i = 0; j = 0;
       while( j < s.length) {
-          if (copy[j] === ' ') {
-              reverse(i, j - 1, copy);
+          if (s[j] === ' ') {
+              reverse(i, j - 1, s);
               i = j + 1;
           }
           j++;
       }
-      reverse(i, s.length-1,copy);
-      return copy.join('');
+      reverse(i, s.length-1,s);
+      return s.join('');
   }
 
   s = "Let's take LeetCode contest"
