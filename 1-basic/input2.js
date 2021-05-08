@@ -27,7 +27,7 @@
 // }
 
 // function f (str) {
-  
+
 //   if (str.length === 0) {
 //     return '';
 //   } else if (str.length === 0) {
@@ -372,7 +372,7 @@ a = [
 // console.log(a.length)
 
 // for (let i = 0; i < a.length -1; i+=3) {
-    
+
 //     function divisibleNumber(A, B, K) {
 //       let count = 0;
 //       for (let i = A; i <= B; i++) {
@@ -399,5 +399,30 @@ for (var i=1; i < 100; i++)
         console.log(i);
 }
 
+
+var bitmask;
+var characters;
+var running;
+function permutations() {
+    var i;
+    if(running.length == characters.length) {
+        console.log(running.join(''));
+    } else {
+    for(i=0; i<characters.length; i++) {
+            if ( ((bitmask>>i)&1) == 0 ) {
+                running.push(characters[i]);
+                bitmask |= (1<<i);
+                permutations();
+                running.pop();
+            }
+        }
+    }
+}
+
+var input = document.getElementById('stdin').value;
+characters = input.split('');
+running = [];
+bitmask = 0;
+permutations();
 
 
