@@ -1,6 +1,13 @@
-var arraySign = function(nums) {
-  return (nums.reduce((c,v) => c*v)) ? ((nums.reduce((c,v) => c*v) > 0) ? 1 : -1) : 0;
-};
+for (let  i = 1; i <= 1000; i++) {
+  if (i % 3 === 0 && i % 15 !== 0) {
+    console.log(i, "flip")
+  } else if (i % 5 === 0 && i % 15 !== 0) {
+    console.log(i, "flop")
+  } else if (i % 15 === 0) {
+    console.log(i, "flipflop")
+  }else {
+    console.log(i)
+  }
 
-nums = [-1,-2,-3,-4,3,2,1]
-console.log(arraySign(nums))
+
+}
