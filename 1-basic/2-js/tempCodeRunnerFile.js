@@ -1,1 +1,1 @@
-nso
+note, magazine
