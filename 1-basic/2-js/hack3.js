@@ -1,14 +1,18 @@
+// 2D array with beautiful technique
 function hourglassSum(arr) {
-  let max = 0;
+  let max = -Infinity, sum = 0;
+
   for(let i = 0; i < arr.length - 2; i++) {
-      let sum = 0;
-      for (let j = 0; j < 3; j++) {
-          sum += arr[i][j] + arr[i+1][j] + arr[i+2][j];
-          sum += arr[i+1][j+1] ;
-          sum += arr[i][j+2] + arr[i+1][j+2] + arr[i+2][j+2];
+    for (let j = 0; j < arr.length - 2; j++) {
+      sum = arr[i + 1][j + 1] ;
+      for (let k = 0; k < 3; k++) {
+        sum += arr[i][j + k];
+        sum += arr[i + 2][j + k];
       }
-      console.log(sum)
+      max = Math.max(sum, max)
+    }
   }
+
   return max;
 
 }
