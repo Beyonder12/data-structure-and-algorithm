@@ -11,6 +11,7 @@ function minSwap(arr) {
 }
 
 console.log(minSwap([2, 3, 4, 1, 5]))
+console.log(minSwap([3,2,1]))
 
 
 function minSwap2(arr) {
