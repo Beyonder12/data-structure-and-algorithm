@@ -10,7 +10,7 @@
 function repeatedString(s, n) {
   let count = 0, extra=0;
   for(let i = 0; i < s.length; i++) {
-      if(s[i] === 'a') count++;
+      if(s[i] === 'a') count++;//2
   }
   for(let j = 0; j < n % s.length; j++) {
     if(s[j] === 'a') extra++;
@@ -20,16 +20,18 @@ function repeatedString(s, n) {
   console.log('n', n)
   console.log('op', count*Math.floor(n/s.length))
 
-
-  return (count*n/s.length) + extra;
+  // console.log('hello')
+  return (count*Math.floor(n/s.length)) + extra;
 
 }
+
+repeatedString('aba',10)
 console.log('return', repeatedString('aba', 10))
 // console.log(repeatedString('a', 10000))
 
 
 //O(n)
-function repeatedString(s, n) {
+function repeatedString2(s, n) {
   let c = 0,
       ca = 0,
       r = n % s.length
