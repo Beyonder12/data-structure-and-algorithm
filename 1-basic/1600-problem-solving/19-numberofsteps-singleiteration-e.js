@@ -12,7 +12,7 @@ var numberOfSteps  = function(num) {
 };
 console.log(numberOfSteps(14))
 
-
+// This is bit manipulation theory
 /**
  * @param {number} num
  * @return {number}
