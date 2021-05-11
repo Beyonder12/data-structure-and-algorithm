@@ -116,6 +116,6 @@ class DoublyLinkedList {
 // list.push(30);
 // console.log(list)
 let node = new Node(30);
-console.log(node)
+console.log(nodeva+)
 node.prev = new Node(40);
 console.log(node)
