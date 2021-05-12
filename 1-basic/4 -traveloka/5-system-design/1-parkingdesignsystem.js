@@ -1,4 +1,4 @@
-const ParkingSystem = function(big, medium, small) {
+function ParkingSystem (small, medium, big) {
   this.count = [small, medium, big];
 };
 
@@ -12,4 +12,5 @@ console.log(parkingSystem.addCar(2))
 console.log(parkingSystem.addCar(2))
 console.log(parkingSystem.addCar(3))
 console.log(parkingSystem.addCar(3))
+console.log(parkingSystem)
 
