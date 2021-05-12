@@ -14,6 +14,7 @@ function Twitter() {
     t++; // if post, record the timestamp moveon
     if (!um.has(userId)) um.set(userId, []);
     um.get(userId).push([tweetId, t]);
+    return um;
   }
 
   function getNewsFeed(userId) { // || means set a default if not exists,
@@ -30,6 +31,7 @@ function Twitter() {
     // add followeeid to followerId's Set, use Set here is easy to remove compared to Array
     if(!fm.has(followerId)) fm.set(followerId, new Set());
     fm.get(followerId).add(followeeId);
+    return fm
   }
 
   function unfollow(followerId, followeeId) {
