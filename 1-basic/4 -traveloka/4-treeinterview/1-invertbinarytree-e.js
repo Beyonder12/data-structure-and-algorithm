@@ -28,7 +28,7 @@ function dfs(node) {
 
   dfs(node.left);
   dfs(node.right)
-r
+
 }
 root = [4,2,7,1,3,6,9]
 console.log(invertTree(root))
