@@ -98,5 +98,5 @@ console.log('add 300: ',mls.addAtHead(300))
 console.log('tail 400: ',mls.addAtTail(400))
 console.log('tail 500: ',mls.addAtTail(500))
 console.log('show head.next.next: ',mls.head.next.next)
-console.log('show size: ',mls.get(mls.size - 1))
+console.log('show get in size: ',mls.get(mls.size - 1))
 console.log('show mls: ',mls);
