@@ -28,7 +28,7 @@ FindSumPairs.prototype.count = function(tot) {
   for(let i = 0; i < this.nums1.length; i++) {
       for (let j = this.nums2.length - 1; j >= 0; j--) {
           if(this.nums1[i] + this.nums2[j] > tot) return 0;
-          if(this.nums1[i] + this.nums2[j] < tot) {i++;j++}
+          if(this.nums1[i] + this.nums2[j] < tot) break;
           if(this.nums1[i] + this.nums2[j] === tot) count++;
       }
   }
@@ -39,6 +39,10 @@ FindSumPairs.prototype.count = function(tot) {
 let fs = new FindSumPairs([1, 1, 2, 2, 2, 3], [1, 4, 5, 2, 5, 4]);
 console.log('fs', fs)
 // fs.add(3,2);
-console.log('count 8', fs.count(8))
+console.log('count 7', fs.count(7))
 console.log(fs)
 
+let a = [1,2,3,4,5]
+let m1 = counter(a);
+
+console.log(m1)
