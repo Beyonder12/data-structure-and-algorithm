@@ -26,11 +26,14 @@ function findTarget(root, k) {
 
   return go(root)
 }
-let i = 30
+let i = 0
 while(i) {
   console.log(i, findTarget(root, i));
   i--
 }
 
+let  a = 'f';
+a = a.concat('b')
+console.log(a)
 
 
