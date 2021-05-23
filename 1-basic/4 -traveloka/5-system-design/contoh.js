@@ -5,7 +5,14 @@ console.log(a)
 
 
 function reverse(str) {
-  return str.split('').reverse().join('');
+  j = str.length - 1;
+  while(i<j) [
+    temp = str[j]
+    str[j] = str[i]
+    str[i] = temp
+
+  ]
+  return str;
 }
 
 console.log(reverse('abcde'))
