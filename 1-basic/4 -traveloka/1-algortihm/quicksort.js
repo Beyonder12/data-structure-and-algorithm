@@ -14,3 +14,13 @@ function quickSort(arr) {
 }
 
 console.log(quickSort([9, 8, 7, 6, 5, 4, 3, 2,1]))
+
+s = '110001101'
+max1 = -Infinity
+s = s.split('0')
+for(e of s) {
+  max1 = Math.max(max1, e.length)
+  console.log(e.length)
+}
+console.log(s)
+console.log(max1)
