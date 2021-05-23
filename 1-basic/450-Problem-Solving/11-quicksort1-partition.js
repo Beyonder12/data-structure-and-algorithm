@@ -18,3 +18,26 @@ function quickSort(arr) {
     }
     return left.concat(equal.concat(right));
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
