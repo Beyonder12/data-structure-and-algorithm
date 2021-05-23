@@ -5,13 +5,13 @@ var sumZero = function(n) {
       sum += arr[i];
     }
     arr[n-1] = sum*-1;
-  
+
     // sum2 = arr.reduce((c,v)=> c+v);
     // console.log(sum2)
     // console.log(sum)
     return arr;
-    
+
   };
-  
+
   n = 5
   console.log(sumZero(n));
