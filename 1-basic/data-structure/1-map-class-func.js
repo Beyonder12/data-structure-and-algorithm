@@ -46,3 +46,8 @@ m2 = new Map();
 console.log(m2.add(1, 1))
 console.log(m2.add(1, 2))
 console.log(m2)
+
+a = 'is2'
+a = a.split('')
+a.splice(2,1)
+console.log(a)
