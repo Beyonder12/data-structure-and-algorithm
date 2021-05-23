@@ -51,3 +51,5 @@ console.log(twitter.follow('user001','user004'))
 console.log(twitter.getNewsFeed('user001'))
 console.log(twitter.unfollow('user001','user002'))
 console.log(twitter.getNewsFeed('user001'))
+
+console.log(Map)
