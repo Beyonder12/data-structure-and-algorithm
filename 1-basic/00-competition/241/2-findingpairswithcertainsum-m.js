@@ -45,4 +45,4 @@ console.log(fs)
 let a = [1,2,3,4,5]
 let m1 = counter(a);
 
-console.log(m1)
+console.log(m1);
