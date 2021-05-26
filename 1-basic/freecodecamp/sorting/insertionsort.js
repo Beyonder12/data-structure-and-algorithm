@@ -16,3 +16,11 @@ function insertionSort(arr) {
 }
 
 console.log(insertionSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]))
+
+
+a = [1,2,3,4,5]
+b = a.splice(2)
+a = a.slice(2);
+console.log(a, b)
+
+console.log(-2%2 + 0)
