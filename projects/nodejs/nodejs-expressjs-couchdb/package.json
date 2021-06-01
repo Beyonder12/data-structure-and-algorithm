@@ -1,0 +1,11 @@
+{
+  "name": "nodejs-expressjs-couchdb",
+  "version": "1.0.0",
+  "description": "couch db is simplest one of nosql database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "fajr",
+  "license": "ISC"
+}
