@@ -1,0 +1,3 @@
+class Persegi extends BangunDatar {
+
+}
