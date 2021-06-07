@@ -38,5 +38,9 @@ public class Solution
 
         System.out.println("Sorted array : ");
         System.out.println(Arrays.toString(arr));
+
+        int [][] boxTypes = new int[][] { {5,10}, {2,5}, {4,7}, {3,9} };
+        Arrays.sort(boxTypes, (a, b) -> b[1] - a[1]);
+        System.out.println((Arrays.deepToString(boxTypes)));
     }
 }
