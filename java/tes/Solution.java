@@ -3,15 +3,13 @@ import java.io.*;
 
 class Solution {
   public static void main(String[] args) {
-    Set<Character> r1 = stringToSet("qwertyuiopQWERTYUIOP");
-    System.out.println(r1);
+    System.out.println("hello");
+    // String S = "abcde";
+    // int N = S.length();
+    // int[] ans = new int[N];
+    // int prev = Integer.MIN_VALUE;
+    // System.out.println(N);
+    // System.out.println(Arrays.toString(ans));
+    // System.out.print(prev);
   }
-
-  public static Set<Character> stringToSet(String str){
-    Set<Character> res = new HashSet<>();
-    for(char c:str.toCharArray()){
-        res.add(c);
-    }
-    return res;
-}
 }
