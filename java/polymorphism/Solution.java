@@ -13,6 +13,7 @@ class Ninja extends Enemy {
   public String getInformation(int a) {
     return "Oike No Jutsu";
   }
+
 }
 
 //overloading
