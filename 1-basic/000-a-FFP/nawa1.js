@@ -33,8 +33,6 @@ function consonant(input) {
     } 
    
   }
- 
-
 
   return ans;
 }
