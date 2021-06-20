@@ -20,7 +20,7 @@ public class PrintDuplicate {
       }
     }
     Set<Map.Entry<Character, Integer>> entrySet = charMap.entrySet();
-    System.out.println("this is entry set: " + entrySet + "this is charMap : " + charMap) ;
+    System.out.println("this is entry set: " + entrySet + "this is charMap : " + charMap                                                                                                                                                                                                                                                                                                    ) ;
 
     System.out.printf("List of duplicate characters in String '%s' %n", word);
     for (Map.Entry<Character, Integer> entry : entrySet) {
