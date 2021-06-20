@@ -9,7 +9,7 @@ public class Solution {
 
     int[] ret = new int[code.length];
     for(int i = 0; i < code.length; i++) {
-      if end = i + k;
+      int end = i + k;
       if(k < 0) {
         ret[i] = prefix[i + code.length] - prefix[end + code.length];
       }
