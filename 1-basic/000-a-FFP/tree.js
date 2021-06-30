@@ -1,35 +1,19 @@
-function TreeNode(val, left, right){
-  this.val = val ? val : null;
-  this.left = left ? left : null;
-  this.right = right ? right : null;
-}
-
-let root = new TreeNode(1);
-root.left = new TreeNode(2);;
-root.right = new TreeNode(3);;
-root.left.left = new TreeNode(4);
-root.left.right = new TreeNode(5);;
-root.right.left = new TreeNode(6);;
-root.right.right = new TreeNode(7);;
-console.log(root)
-
-
-function bstPreOrder(root) {
-  let res = [];
-
-  function helper(node) {
-    if(!node) return;
-
-
-    helper(node.left);
-
-    // helper(node.right);
-    res.push(node.val);
+function reverse(param) {
+  let i = 0, j = param.length - 1;
+   param=param.split('');
+  while(i < j) {
+    let temp = param[i];
+    param[i] = param[j];
+    param[j] = temp;
+    i++;
+    j--;
   }
-
-  helper(root)
-  return res;
-
+  return param.join('')
 }
 
-console.log(bstPreOrder(root))
+input = 'bakar';
+input2 = 'bakar';
+input = input.split('').reverse().join('');
+
+console.log(input)
+console.log(reverse(input2))
