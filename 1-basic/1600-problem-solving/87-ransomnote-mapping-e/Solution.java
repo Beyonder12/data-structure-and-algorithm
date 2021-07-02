@@ -4,6 +4,7 @@ public class Solution {
   public static void main(String[] args) {
     System.out.println(canConstuct("aa" , "aabb"));//true
     System.out.println(canConstuct("tru", "rtt"));//false
+    System.out.println(('b' - 'a'));
   }
 
   public static boolean canConstuct(String ransomNote, String magazine) {
