@@ -1,1 +1,1 @@
-char
+System.out.println('e' ^ 'e');

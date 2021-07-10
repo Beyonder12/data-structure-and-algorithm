@@ -14,6 +14,6 @@ public class Solution {
     // System.out.println('e' ^ 'b');
     // System.out.println('e' ^ 'c');
     // System.out.println('e' ^ 'd');
-    // System.out.println('e' ^ 'e');
+    System.out.println('e' ^ 'e');
   }
 }
