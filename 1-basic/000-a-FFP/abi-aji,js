@@ -1,0 +1,86 @@
+// Created by Beyonder12 13/07/2021
+const schedule = require('node-schedule');
+
+let counter = 0;
+
+module.exports = function(app) {
+  console.log('Running job schedule autoCheckOut');
+  const { KReport, Payroll, KConfig, KSms } = app.models;
+
+  // schedule.scheduleJob('59 23 * * *', async function() {
+  // schedule.scheduleJob('*/5 * * * * *', async function() {
+    //succesfully testing cron at 22 16
+
+        console.log("Cron for checking out");
+
+      // Find doctor schedule
+      // Kehadiran -> Masyarakat <- KConfigAccount -> Doctor <- Praktek
+      // A -> B (B hasMany A), B -> A (B belongsTo A)
+
+      var Kehadiran = app.models.Kehadiran;
+      var query = {
+        fields : ["createdId", "checkOutTime"],
+        include: ["User"]
+      }
+      var listForCheckOutTodayOfDoctor = await Kehadiran.find(query);
+      var listForCheckOutTodayOfDoctor = JSON.parse(JSON.stringify(listForCheckOutTodayOfDoctor));
+
+      console.log("listForCheckOutTodayOfDoctor : ", listForCheckOutTodayOfDoctor)
+
+        var Kehadiran = app.models.Kehadiran;
+
+        var listNotCheckoutToday = await Kehadiran.find();
+        var listNotCheckoutTodayFilter = JSON.parse(JSON.stringify(listNotCheckoutToday)).filter(e => !e.checkOutTime)
+
+        // console.log(listNotCheckoutTodayFilter)
+        for(let i = 0; i < listNotCheckoutTodayFilter.length; i++) {
+          let duration = 0;
+          // console.log("i: ", i, "listNotCheckoutTodayFilter[i].checkInTime : ", listNotCheckoutTodayFilter[i].checkInTime)
+          if(listNotCheckoutTodayFilter[i].checkInTime) {
+            // console.log("String(listNotCheckoutTodayFilter[i].checkInTime.length)", String(listNotCheckoutTodayFilter[i].checkInTime).length)
+            if(String(listNotCheckoutTodayFilter[i].checkInTime).length & 1) {
+              durationHour = 23 - Number(String(listNotCheckoutTodayFilter[i].checkInTime).substr(0,1));
+              durationMinute = 59 - Number(String(listNotCheckoutTodayFilter[i].checkInTime).substr(-2));
+              if(durationMinute < 0) {
+                durationMinute =  60 + durationMinute;
+                durationHour--;
+              }
+              duration = String(durationHour) + durationMinute;
+            }
+            else  {
+              durationHour = 23 - Number(String(listNotCheckoutTodayFilter[i].checkInTime).substr(0,2));
+              durationMinute = 59 - Number(String(listNotCheckoutTodayFilter[i].checkInTime).substr(-2));
+              if(durationMinute < 0) {
+                durationMinute =  60 + durationMinute;
+                durationHour--;
+              }
+              duration = String(durationHour) + durationMinute;
+            }
+          }
+
+
+          let body = {
+            // i: i,
+            kehadiranId : listNotCheckoutTodayFilter[i].id,
+            checkOutTime : 2359,
+            duration : Number(duration) || 0,
+            shifts : ["Pagi", "Siang"],
+          }
+          // console.log(body)
+          // console.log(JSON.parse(JSON.stringify(await Kehadiran.find())))
+          // await Kehadiran.checkOutForCron(body);
+          // console.log(result)
+
+        }
+
+  });
+
+
+
+}
+// checkin = '12345'
+// c = checkin.substr(1, 3)
+// a = checkin.substr(-2, 1, -1)
+// console.log(checkin, a, c)
+// console.log('123' + "- 100" )
+// console.log(18 &1)
