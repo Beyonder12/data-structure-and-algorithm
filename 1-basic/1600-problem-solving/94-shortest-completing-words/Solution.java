@@ -53,20 +53,34 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        ArrayList<Character> array = new ArrayList<>();
-        array.add('a');
-        array.add('a');
-        array.add('a');
-        array.add('b');
+        ArrayList<Character> arrayList = new ArrayList<>();
+        arrayList.add('a');
+        arrayList.add('a');
+        arrayList.add('a');
+        arrayList.add('b');
 
-        Map<Character, Integer> map1 = new HashMap<>();
-        for(Character ch : array) {
+        Map<Character, Integer> map = new HashMap<>();//match
+        for(Character ch : arrayList) {
             System.out.println(ch);
-            map1.put(ch, map1.getOrDefault(ch, 0) + 1);
+            map.put(ch, map.getOrDefault(ch, 0) + 1);
         }
 
-        System.out.println(map1);
-        System.out.println(array);
+        ArrayList<Character> arrayList1 = new ArrayList<>();
+        for(char ch : map.keySet()) {
+            arrayList1.add(ch);
+        }
+
+        String s = "Iam a superhero";
+        for(int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            // System.out.println( ch + " isLetter? " + Character.isLetter(ch));
+            System.out.println( ch + " isLetter? " + Character.isLetter(ch));
+        }
+
+        System.out.println(map);
+        System.out.println(arrayList);
+        System.out.println(Integer.MAX_VALUE);
+        System.out.print(arrayList1);
     }
 
 }
