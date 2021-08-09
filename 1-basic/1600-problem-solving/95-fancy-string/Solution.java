@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 class Solution {
     private static String makeFancyString(String s) {
         char prev = s.charAt (0);
@@ -22,5 +25,12 @@ class Solution {
         StringBuilder sb = new StringBuilder();
         sb.append("a");
         System.out.println(sb.getClass().getSuperclass());
+
+        List<String> list = new ArrayList<>();
+        list.add("satu");
+        list.add("dua");
+        list.add("tiga");
+        System.out.println(list.size());
+
     }
 }

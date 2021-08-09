@@ -80,7 +80,8 @@ class Solution {
         System.out.println(map);
         System.out.println(arrayList);
         System.out.println(Integer.MAX_VALUE);
-        System.out.print(arrayList1);
+        System.out.println(arrayList1);
+        System.out.println(-12 % 10);
     }
 
 }
