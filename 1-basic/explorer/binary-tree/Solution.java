@@ -32,6 +32,9 @@ public class Solution {
     public static List<Integer> preorderTraversal(TreeNode node) {
         List<Integer> list = new LinkedList<Integer>();
         Stack<TreeNode> rights = new Stack<TreeNode>();
+        System.out.println(list);
+        System.out.println(rights);
+        
         while(node != null) {
             list.add(node.val);
             if (node.right != null) {
