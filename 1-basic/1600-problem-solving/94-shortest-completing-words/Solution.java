@@ -4,7 +4,14 @@ import java.util.*;
 //O(n) time because only the iteration through the words can be counted towards time complexity everything else takes constant time,
 //O(1) space because worst case there are two hash maps that will be in the memory both hashmaps will have constant space.
     
-
+// Input: licensePlate = "1s3 PSt", words = ["step","steps","stripe","stepple"]
+// Output: "steps"
+// Explanation: licensePlate contains letters 's', 'p', 's' (ignoring case), and 't'.
+// "step" contains 't' and 'p', but only contains 1 's'.
+// "steps" contains 't', 'p', and both 's' characters.
+// "stripe" is missing an 's'.
+// "stepple" is missing an 's'.
+// Since "steps" is the only word containing all the letters, that is the answer.
 
 class Solution {
 
