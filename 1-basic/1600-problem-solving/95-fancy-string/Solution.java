@@ -33,4 +33,28 @@ class Solution {
         System.out.println(list.size());
 
     }
+
+
+    static String fancyString1(String s) {
+        char prev = s.charAt(0);
+        int freq = 1;
+        String res = "";
+        res += prev;
+
+        for( int i = 1; i < s.length(); i++) {
+            if(s.charAt(i) == prev) {
+                freq++;
+            } else {
+                prev = s.charAt(i);
+                freq = 1;
+            }
+            if(freq < 3) {
+                res += s.charAt(i);
+            }
+
+
+        }
+
+        return res;
+    }
 }

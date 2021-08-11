@@ -53,7 +53,7 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        ArrayList<Character> arrayList = new ArrayList<>();
+        List<Character> arrayList = new ArrayList<>();
         arrayList.add('a');
         arrayList.add('a');
         arrayList.add('a');
@@ -64,6 +64,7 @@ class Solution {
             System.out.println(ch);
             map.put(ch, map.getOrDefault(ch, 0) + 1);
         }
+        System.out.println("map.getOrDefault('c',0) : " + map.getOrDefault('c',0));
 
         ArrayList<Character> arrayList1 = new ArrayList<>();
         for(char ch : map.keySet()) {
