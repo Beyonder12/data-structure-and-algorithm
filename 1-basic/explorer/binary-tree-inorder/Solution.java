@@ -10,7 +10,7 @@ class TreeNode {
  
     }
 }
-//Recursive Approach
+//Recursive Approach and Iterative
 class Solution {
     
     public static void main(String[] args) {
@@ -44,6 +44,8 @@ class Solution {
         return res;
     }
 
+
+    // recursive
     public static List<Integer> inorderTraversal(TreeNode root) {
         List <Integer> res = new ArrayList<>();
         helper(root, res);
