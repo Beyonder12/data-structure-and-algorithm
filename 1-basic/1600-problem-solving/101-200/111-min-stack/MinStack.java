@@ -43,7 +43,17 @@ class MinStack1 {
  */
 
 
+
+
+
  class MinStack {
+     public static void main(String[] args) {
+        MinStack minStack = new MinStack();
+        minStack.push(1);
+        minStack.push(2);
+        minStack.push(3);
+        System.out.println(minStack.getMin());
+     }
      private Node head;
 
      public void push(int x) {
