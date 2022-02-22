@@ -2,18 +2,30 @@ import java.io.*;
 import java.util.*;
 
 public class Number2 {
-    public static void main(String[]args) {
-        int a = 5, f = 3;
-        for (;;) {
-            if((a+=f+1) > 8)
-                break;
-            else
-            f = a%(f+1);
+    public static int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for(int i = 0; i < nums.length; i++) {
+            map.put(nums[i], i);
+            System.out.println("map for i : " + i + " -> " + map);
+            if (map.containsKey(target - nums[i])) return new int[] {map.get(target - nums[i]), i};
         }
-        System.out.print(f*a);
+        return new int[] {0, 0};
     }
-    
-    // for (int i = 0; i < 5; i++) {
-    //     System.out.println(i);
-    // }
+
+    public static void main(String[] args) {
+        // Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        // int i = 1;
+        // int[] nums = {1,2};
+        // map.put(nums[i], i++);
+        Stack<Character> stack = new Stack<>();
+        String string = "abc";
+        char[] charString = string.toCharArray();
+        System.out.println((charString));
+        System.out.println(Arrays.toString(charString));
+
+        System.out.println(stack.isEmpty());
+
+        // System.out.println(Arrays.toString(twoSum(new int[] {1,2,3,4,5}, 9)));
+        // System.out.println(Arrays.toString(twoSum(new int[] {6,2,4}, 8)));
+    }
 }

@@ -1,3 +1,9 @@
- // for(let i = 0; i < input.length; i++) {
-  //   if(input[i] !== 'a' || input[i] !== 'i' || input[i] !== 'u' || input[i] !== 'e' || input[i] !== 'o') ans.splice(i,1)
-  // }
+console.log(1)
+// console.log(2)
+// console.log(3)
+// console.log("mulai")
+
+// looping / perulangan
+// for(let i = 1; i <=10; i++) {
+//     console.log(i)
+// }

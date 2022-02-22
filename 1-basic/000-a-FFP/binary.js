@@ -1,39 +1,36 @@
-// program to convert decimal to binary
-
-// take input
-// const number = parseInt(prompt('Enter a decimal number: '));
-
-// convert to binary
-let number = 2.5
-const result = number.toString(2);
-
-console.log('Binary:' + ' ' + result);
-console.log(10.1 | 0)
 
 
-
-
-function example() {
-
+for(let i = 1; i <= 10; i++) {
+    if(i % 2 == 0) {
+        console.log("now is - ", i, "th", " that is even");
+    } else {
+        console.log("now is - ", i, "th", " that is odd")
+    }
+    
 }
 
-a = ['1', '2', '3', '4', '5'];
-console.log(Number(a))
-obj ={}
+// Command for computer!
 
-keys =   [1,1,3,4,5,1,2,30]
-values = [1,3,4,5,6,8,9,10]
-com = keys + values;
-console.log(com)
-// console.log(obj[0])
-// obj[keys[0]] = [values[0]]
-// obj[keys[1]].push(values[1])
-// console.log(obj)
-// console.log(obj[1])
-console.log(5 >> 2)
+// 1. looping (for, while, do while)
+// 2. conditional (if, else, else if)
+// 3. data type (number, string, boolean, object)
+// 4. Object Oriented Programming
+// 5. switch...case
 
-target = [4]
-
-while(--target[0]) {
-    console.log('push', 'pop')
+let i =0;
+while(i++<10) {
+    console.log("this while looping - ", i)
 }
+
+let j = 0;
+do {
+    console.log("this is do while - ", j)
+} while(j++ < 10)
+
+
+
+ manusia = {
+     mata : 1,
+     berjalan: "tegak",
+     lari : true
+ }
