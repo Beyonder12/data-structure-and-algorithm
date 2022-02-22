@@ -13,16 +13,16 @@
 
 // conditional]
 
-let umur = 17;
-if(umur < 17) {
-    console.log("Anda bocil!")
-} else if(umur == 17) {
-    console.log("Anda baru saja dewasa!")
-} else if(umur > 80){
-    console.log("Input yang bener!")
-} else {
-    console.log("Anda tua bangka!")
-}
+// let umur = 17;
+// if(umur < 17) {
+//     console.log("Anda bocil!")
+// } else if(umur == 17) {
+//     console.log("Anda baru saja dewasa!")
+// } else if(umur > 80){
+//     console.log("Input yang bener!")
+// } else {
+//     console.log("Anda tua bangka!")
+// }
 
 // data type
 // string, number, boolean, object, array

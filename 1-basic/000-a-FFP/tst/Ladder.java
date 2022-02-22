@@ -1,4 +1,4 @@
-import java.util.*;
+
 
 public class Ladder {
     public static void main(String[] args) {
@@ -16,10 +16,6 @@ public class Ladder {
     }
     static int doStuff(String[] args) {
         return Integer.parseInt(args[0]);
-        char char1=65;  
-        char char2=97;  
-          
-        System.out.println("char1: "+char1);  
-        System.out.println("char2: "+char2);  
+         
     }
 }

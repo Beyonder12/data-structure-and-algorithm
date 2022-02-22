@@ -156,5 +156,5 @@ console.log("this is must number" == "this is must number")
 
 console.log();
 
-num = 4
+num = 
 console.log(num ^ 1)

@@ -22,6 +22,7 @@ function magic(start, target, dictionary) {
     // for(d of dictionary) {
     //     let map = {};
     //     for(s of start) {
+                
     //         map[s] = (map[s] + 1) || 1;
     //     }
     // }
