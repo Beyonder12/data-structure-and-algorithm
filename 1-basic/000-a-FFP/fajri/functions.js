@@ -86,10 +86,38 @@ function minSteps(s, t) {
     console.log("sMap", sMap);
     console.log();
     console.log("tMap", tMap);
-    return steps;
-
-    
+    return steps;  
 }
+
+function minSteps1(s, t) {
+    let ans = 0, sCounter = [], tCounter = [];
+    for(ch of s) sCounter[ch.charCodeAt() - 97] ? sCounter[ch.charCodeAt() - 97]++ : sCounter[ch.charCodeAt() - 97] = 1;
+    for(ch of t) tCounter[ch.charCodeAt() - 97] ? tCounter[ch.charCodeAt() - 97]++ : tCounter[ch.charCodeAt() - 97] = 1;
+    for(let i = 0; i< 26; i++) ans += Math.abs(sCounter[i] - tCounter[i])
+    // console.log(sCounter);
+    // console.log(tCounter);
+    return ans;
+}
+
+function minSteps2(s, t) {
+    let ans = 0, sCounter = new Array(26).fill(0), tCounter = new Array(26).fill(0);
+    console.log();
+    for(ch of s)sCounter[ch.charCodeAt() - 97]++;
+    for(ch of t)tCounter[ch.charCodeAt() - 97]++;
+    for(let i = 0; i< 26; i++) ans += Math.abs(sCounter[i] - tCounter[i])
+    // console.log(sCounter);
+    // console.log(tCounter);
+    return ans;
+}
+
+// public int minSteps(String s, String t) {
+//     int ans = 0;
+//     int[] sCounter = new int[26], tCounter = new int[26];
+//     for(char ch: s.toCharArray()) sCounter[ch - 'a']++;
+//     for(char ch: t.toCharArray()) tCounter[ch - 'a']++;
+//     for (int i = 0; i < 26; i++) ans += Math.abs(sCounter[i] - tCounter[i]);
+//     return ans;
+// }
 
 console.log(printFirstFibonacci(10));
 console.log(factorial(5))
@@ -98,3 +126,5 @@ console.log(pow(2,-3));
 console.log(firstPrimeNumber(3));
 console.log(deleteSomeAnagram(["code", "argmm", "odce", "mmarg"]))
 console.log(minSteps("leetcode", "coatts"));
+console.log(minSteps1("leetcode", "coatts"));
+console.log(minSteps2("leetcode", "coatts"));
