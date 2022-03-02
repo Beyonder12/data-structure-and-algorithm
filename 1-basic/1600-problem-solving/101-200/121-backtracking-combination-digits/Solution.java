@@ -23,7 +23,7 @@ class Solution {
         for(int i = 0; i < digit.length(); i++) {
             for(String x : l) {
                 result.add(x + digit.charAt(i));
-            }
+            }  nknef
         }
         return result;
     }
